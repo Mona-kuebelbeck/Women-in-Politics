@@ -1,7 +1,7 @@
 let POF_data;
 let arrayOfCountries = [];
 let baseLine = 0;
-let selectedCountries = ["WLD", "NOR", "BRA", "CAN", "CHN", "DEU", "FRA", "GBR", "ITA", "JPN", "MEX", "RUS", "USA", "IND", "CUB"];
+let selectedCountries = ["ARG", "AUS", "AUT", "BDI", "BEL", "BGD", "BLR", "BOL", "BRA", "CAN", "CHE", "CHL", "CHN", "CMR", "CRI", "CUB", "CZE", "DEU", "DNK", "DZA", "ECU", "ESP", "ETH", "FIN", "FRA", "GBR", "GRC", "GRD", "HRV", "IND", "IRL", "IRQ", "ISL", "ISR", "ITA", "JPN", "KEN", "KHM", "KOR", "LUX", "MAR", "MEX", "MKD", "MOZ", "NAM", "NGA", "NIC", "NLD", "NOR", "NPL", "NZL", "PAK", "PER", "POL", "PRK", "PRT", "QAT", "RUS", "RWA", "SEN", "SGP", "SRB", "SVN", "SWE", "SYC", "TCD", "THA", "TON", "TUR", "TZA", "UGA", "UKR", "USA", "UZB", "VEN", "VNM", "WLD", "ZAF"];
 
 let names = [];
 
@@ -90,7 +90,7 @@ function draw() {
   let currentIndex = 0;
 
   for (let i = 0; i < selectedCountries.length; i++) {
-    const yCoordinate = 100 + i * 25;
+    const yCoordinate = 80 + i * 15;
     const xCoordinate = innerWidth - 180;
     if (mouseY < yCoordinate && mouseY > yCoordinate - sizeOfText && mouseX > xCoordinate) {
       currentIndex = i;
@@ -98,7 +98,10 @@ function draw() {
     } else {
       arrayOfCountries[i].selected = false;
     }
+    push();
+    textSize(10);
     text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
+    pop();
   }
 
   text(message, messageX, messageY);

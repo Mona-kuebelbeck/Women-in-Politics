@@ -18,7 +18,7 @@ class Country {
   calculatePoints(lineaBase) {
     for (let year = 0; year < this.arrayOfData.length; year++) {
       let secX = this.xBorder + year * this.stepX;
-      let secY = map(this.arrayOfData[year].y, 0, 55, lineaBase, 80);
+      let secY = map(this.arrayOfData[year].y, 0, 65, lineaBase, 80);
       let currentPoint = createVector(secX, secY);
       this.arrayOfpoints.push(currentPoint);
     }
