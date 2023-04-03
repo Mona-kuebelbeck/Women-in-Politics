@@ -73,6 +73,7 @@ function setup() {
 
 // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 function draw() {
+
   const sizeOfText = 18;
   background(10);
 
@@ -107,9 +108,9 @@ function draw() {
   text(message, messageX, messageY);
   fill(255, 0, 0);
   strokeWeight(3);
-  text("50%", 0, baseLine - 590);
+  text("50%", 0, 240);
   stroke(255, 0, 0);
-  line(40, baseLine - 595, width - 250, baseLine - 595);
+  line(40, 232.76923076923072, width - 250, 232.76923076923072);
   stroke(255);
   strokeWeight(3);
   line(40, baseLine, width - 225, baseLine);
