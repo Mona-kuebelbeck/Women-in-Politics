@@ -105,3 +105,5 @@ function isThere (candidate) {
     }
     return (answer);
 }
+
+//bumsibaum ist wieder da
