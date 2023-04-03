@@ -105,5 +105,3 @@ function isThere (candidate) {
     }
     return (answer);
 }
-
-//bumsibaum
