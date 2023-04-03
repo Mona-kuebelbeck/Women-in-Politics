@@ -8,7 +8,7 @@ class Country {
         this.overMe = false;
         this.selected = false;
 
-        this.myColorNormal = color(180, 80, 240, 255);
+        this.myColorNormal = color(220,220,220,200);
         this.myColorOver = color(255);
 
         this.numYears = 24; // for the distribution of the points in X

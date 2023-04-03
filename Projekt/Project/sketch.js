@@ -76,19 +76,38 @@ function draw() {
     }
 
     noStroke();
-    fill(200);
+    fill(255);
     textSize(18);
     text('Proportion of seats held by women in national parliaments (%)', 25, 40);
     text('1997-2021', 25, 60);
-    text('World Average', innerWidth-200, 100);
+    text('World Average', innerWidth-180, 100);
     for (let country = 0; country < selectedCountries.length; country++) {
-        text(arrayOfCountries[country].myName, innerWidth-200, 125+country*25);
+        text(arrayOfCountries[country].myName, innerWidth-180, 125+country*25);
     }
 
+    noStroke();
+    fill(255,0,0);
+    text('50%', 1275, baseLine-590);
+    stroke(255, 0, 0);
+    line(25, baseLine-595, width-250, baseLine-595);
     stroke(255);
     strokeWeight(3);
-    line(25, baseLine, width-200, baseLine);
+    line(25, baseLine, width-225, baseLine);
     line(25, baseLine, 25, 100);
+
+    for (let year = 1997; year < 2022; year++) {
+        let x = map(year, 1997, 2021, 50, width-250);
+        //put the text diagonally 20 px lower than the line
+        push();
+        translate(x, baseLine+50);
+        rotate(-PI/4);
+        noStroke();
+        fill(255);
+        text(year, 0, 0);
+        pop();
+        
+    }
+
 }// -----------------------------------------------------------  DRAW  ----------------------------------------------------
 
 
