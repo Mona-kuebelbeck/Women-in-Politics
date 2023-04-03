@@ -1,7 +1,7 @@
 let POF_data;
 let arrayOfCountries = [];
 let baseLine = 0;
-let selectedCountries = ['ARE', 'BRA', 'CAN', 'CHN', 'DEU', 'FRA', 'GBR', 'ITA', 'JPN', 'MEX', 'RUS', 'USA','IND','CUB' ];
+let selectedCountries = ['WLD', 'ARE', 'BRA', 'CAN', 'CHN', 'DEU', 'FRA', 'GBR', 'ITA', 'JPN', 'MEX', 'RUS', 'USA','IND','CUB' ];
 
 let names = [];
 
@@ -70,9 +70,6 @@ function setup() {
 // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 function draw() {
     background(10);
-    stroke(255);
-    line(25, baseLine, width-200, baseLine);
-    line(25, baseLine, 25, 100);
 
     for (let country = 0; country < arrayOfCountries.length; country++) { // countries
         arrayOfCountries[country].drawCountry();
@@ -81,12 +78,17 @@ function draw() {
     noStroke();
     fill(200);
     textSize(18);
-    text('Proportion of seats held by women in national parliaments (%)', 20, 30);
-    text('1997-2021', 20, 50);
-    text('All Countries', innerWidth-200, 100);
+    text('Proportion of seats held by women in national parliaments (%)', 25, 40);
+    text('1997-2021', 25, 60);
+    text('World Average', innerWidth-200, 100);
     for (let country = 0; country < selectedCountries.length; country++) {
         text(arrayOfCountries[country].myName, innerWidth-200, 125+country*25);
     }
+
+    stroke(255);
+    strokeWeight(3);
+    line(25, baseLine, width-200, baseLine);
+    line(25, baseLine, 25, 100);
 }// -----------------------------------------------------------  DRAW  ----------------------------------------------------
 
 

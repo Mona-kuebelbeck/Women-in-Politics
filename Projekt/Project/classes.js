@@ -9,7 +9,7 @@ class Country {
         this.selected = false;
 
         this.myColorNormal = color(180, 80, 240, 255);
-        this.myColorOver = color(200);
+        this.myColorOver = color(255);
 
         this.numYears = 24; // for the distribution of the points in X
         this.stepX = (width-300) / this.numYears; 
@@ -24,9 +24,9 @@ class Country {
             this.arrayOfpoints.push(currentPoint);
         }
 
-        /*if(this.myCode === "DEU") {
+        if(this.myCode === "WLD") {
             this.selected=true;
-        }*/
+        }
     };
 
 
