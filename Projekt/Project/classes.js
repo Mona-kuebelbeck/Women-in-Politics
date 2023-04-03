@@ -8,25 +8,25 @@ class Country {
         this.overMe = false;
         this.selected = false;
 
-        this.myColorNormal = color(128, 0, 0, 200);
-        this.myColorOver = color(255);
+        this.myColorNormal = color(180, 80, 240, 255);
+        this.myColorOver = color(200);
 
         this.numYears = 24; // for the distribution of the points in X
-        this.stepX = (width-100) / this.numYears; 
+        this.stepX = (width-300) / this.numYears; 
         this.xBorder = 50;
     }
 
     calculatePoints (lineaBase) {
         for (let year = 0; year < this.arrayOfData.length; year++) {
             let secX = this.xBorder + (year) * this.stepX;
-            let secY = map (this.arrayOfData[year].y, 0, 55,  lineaBase, 10); 
+            let secY = map (this.arrayOfData[year].y, 0, 55,  lineaBase, 80); 
             let currentPoint = createVector (secX,secY);
             this.arrayOfpoints.push(currentPoint);
         }
 
-        if(this.myCode === "DEU") {
+        /*if(this.myCode === "DEU") {
             this.selected=true;
-        }
+        }*/
     };
 
 
@@ -66,12 +66,11 @@ class Country {
             if (distance < 5) {
                 fill(255);
                 noStroke();
-                textSize(24);
-                //text( (this.arrayOfData[year].y/ 1000000000000).toFixed(2) + " MoM",       this.arrayOfpoints[year].x, this.arrayOfpoints[year].y-70);
+                textSize(18);
                 text( this.myName, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y-45);
                 names.push(this.myName);
-                // text( this.myName, this.arrayOfData[year].x, this.arrayOfpoints[year].y-45);
-                text( this.arrayOfData[year].x, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y-20);
+                text( this.arrayOfData[year].x, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y-25);
+                text( this.arrayOfData[year].y, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y-5);
                 ifAny = true;
             }
         }

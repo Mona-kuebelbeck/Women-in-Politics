@@ -67,14 +67,13 @@ function setup() {
 }// --------------------------------------------------------  SET UP ----------------------------------------------------
 
 
-
-
-
-
-
 // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 function draw() {
     background(10);
+    stroke(255);
+    line(25, baseLine, width-200, baseLine);
+    line(25, baseLine, 25, 100);
+
     for (let country = 0; country < arrayOfCountries.length; country++) { // countries
         arrayOfCountries[country].drawCountry();
     }
@@ -82,12 +81,12 @@ function draw() {
     noStroke();
     fill(200);
     textSize(18);
-    text("Proportion of seats held by women in national parliaments (%)", 20, 30);
-    text("1976-2021", 20, 50);
-
-    fill(200);
-    textSize(12);
-    text(frameRate().toFixed(2), 20, height-30);
+    text('Proportion of seats held by women in national parliaments (%)', 20, 30);
+    text('1997-2021', 20, 50);
+    text('All Countries', innerWidth-200, 100);
+    for (let country = 0; country < selectedCountries.length; country++) {
+        text(arrayOfCountries[country].myName, innerWidth-200, 125+country*25);
+    }
 }// -----------------------------------------------------------  DRAW  ----------------------------------------------------
 
 
@@ -105,5 +104,3 @@ function isThere (candidate) {
     }
     return (answer);
 }
-
-//bumsibaum ist wieder da
