@@ -63,10 +63,9 @@ class Country {
         fill(255);
         noStroke();
         textSize(18);
-        text(this.myName, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y - 45);
+        text(this.myName + " (" + this.arrayOfData[year].x + ")", this.arrayOfpoints[year].x, this.arrayOfpoints[year].y - 45);
         names.push(this.myName);
-        text(this.arrayOfData[year].x, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y - 25);
-        text(this.arrayOfData[year].y, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y - 5);
+        text(this.arrayOfData[year].y + " %", this.arrayOfpoints[year].x, this.arrayOfpoints[year].y - 25);
         ifAny = true;
       }
     }
