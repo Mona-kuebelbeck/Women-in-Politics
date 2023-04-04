@@ -1,7 +1,7 @@
 let POF_data;
 let arrayOfCountries = [];
 let baseLine = 0;
-let selectedCountries = ["ARG", "AUS", "AUT", "BDI", "BEL", "BGD", "BLR", "BOL", "BRA", "CAN", "CHE", "CHL", "CHN", "CMR", "CRI", "CUB", "CZE", "DEU", "DNK", "DZA", "ECU", "ESP", "ETH", "FIN", "FRA", "GBR", "GRC", "GRD", "HRV", "IND", "IRL", "IRQ", "ISL", "ISR", "ITA", "JPN", "KEN", "KHM", "KOR", "LUX", "MAR", "MEX", "MKD", "MOZ", "NAM", "NGA", "NIC", "NLD", "NOR", "NPL", "NZL", "PAK", "PER", "POL", "PRK", "PRT", "QAT", "RUS", "RWA", "SEN", "SGP", "SRB", "SVN", "SWE", "SYC", "TCD", "THA", "TON", "TUR", "TZA", "UGA", "UKR", "USA", "UZB", "VEN", "VNM", "WLD", "ZAF"];
+let selectedCountries = ["ARG", "AUS", "AUT", "BDI", "BEL", "BLR", "BOL", "BRA", "CAN", "CHE", "CHL", "CHN", "CRI", "CUB", "DEU", "DNK", "DZA", "ECU", "ESP", "ETH", "FIN", "FRA", "GBR", "GRC", "IND", "IRL", "IRQ", "ISL", "ITA", "JPN", "KOR", "LUX", "MEX", "MKD", "NAM", "NIC", "NLD", "NOR", "NPL", "NZL", "PER", "POL", "PRK", "PRT", "RUS", "RWA", "SEN", "SGP", "SRB", "SVN", "SWE", "SYC", "TCD", "THA", "TON", "TUR", "TZA", "UGA", "UKR", "USA", "UZB", "VEN", "VNM", "WLD", "ZAF"];
 
 let names = [];
 
