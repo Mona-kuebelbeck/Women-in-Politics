@@ -1,7 +1,7 @@
 let POF_data;
 let arrayOfCountries = [];
 let baseLine = 0;
-let selectedCountries = ["ARE", "BEL", "BLR", "BOL", "CHL", "CHN", "CRI", "CUB", "DEU", "ECU", "ESP", "ETH", "FIN", "FRA", "GBR", "IND", "IRL", "IRQ", "ISL", "ITA", "JPN", "MEX", "MKD", "NAM", "NIC", "NOR", "NPL", "NZL", "PER", "PRT", "RUS", "RWA", "SEN", "SWE", "USA", "WLD", "ZAF"];
+let selectedCountries = ["ARE", "BEL", "BOL", "CHL", "CHN", "CRI", "CUB", "DEU", "ECU", "ESP", "FIN", "FRA", "GBR", "IND", "IRL", "IRQ", "ISL", "ITA", "JPN", "MEX", "MKD", "NAM", "NIC", "NOR", "NPL", "NZL", "PER", "PRT", "RUS", "RWA", "SEN", "SWE", "USA", "WLD", "ZAF"];
 
 let names = [];
 
@@ -34,7 +34,39 @@ function setup() {
       currentCountry = new Country();
       currentCountry.myName = currentCountryNAME;
       currentCountry.myCode = currentCountryCODE;
+
+      // hier wird der Index ausgelesen/gespeichert
+      let currentCountryX97 = POF_data.getNum(r, 66); 
+      currentCountry.X97 = currentCountryX97;
+      let currentCountryX98 = POF_data.getNum(r, 67);
+      currentCountry.X98 = currentCountryX98;
+      let currentCountryX99 = POF_data.getNum(r, 68);
+      currentCountry.X99 = currentCountryX99;
+      let currentCountryX00 = POF_data.getNum(r, 69);
+      currentCountry.X00 = currentCountryX00;
+      let currentCountryX01 = POF_data.getNum(r, 70);
+      currentCountry.X01 = currentCountryX01;
+      let currentCountryX02 = POF_data.getNum(r, 71);
+      currentCountry.X02 = currentCountryX02;
+      let currentCountryX03 = POF_data.getNum(r, 72);
+      currentCountry.X03 = currentCountryX03;
+      let currentCountryX04 = POF_data.getNum(r, 73);
+      currentCountry.X04 = currentCountryX04;
+      let currentCountryX05 = POF_data.getNum(r, 74);
+      currentCountry.X05 = currentCountryX05;
+      let currentCountryX06 = POF_data.getNum(r, 75);
+      currentCountry.X06 = currentCountryX06;
+      let currentCountryX07 = POF_data.getNum(r, 76);
+      currentCountry.X07 = currentCountryX07;
+      let currentCountryX08 = POF_data.getNum(r, 77);
+      currentCountry.X08 = currentCountryX08;
+      let currentCountryX09 = POF_data.getNum(r, 78);
+      currentCountry.X09 = currentCountryX09;
+      let currentCountryX10 = POF_data.getNum(r, 79);
+      currentCountry.X10 = currentCountryX10;
+
       arrayOfCountries.push(currentCountry);
+      console.log(arrayOfCountries);
     }
   } // end for  tablaDeAreas --------------------------------------------------
 
@@ -121,6 +153,7 @@ function draw() {
     text(year, 0, 0);
     pop();
   }
+
 } // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 
 function mouseReleased() {
