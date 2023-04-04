@@ -9,7 +9,7 @@ let names = [];
 function preload() {
   POF_data = loadTable("data/POF.csv", "csv", "header");
   GII_data = loadTable("data/GII.csv", "csv", "header");
-  myFont = loadFont('assets/AvenirNextLTPro-Regular.otf');
+  myFont = loadFont("assets/AvenirNextLTPro-Regular.otf");
 } // -------------------------------------------------------  PRELOAD  ----------------------------------------------------
 
 // --------------------------------------------------------  SET UP ----------------------------------------------------
@@ -104,10 +104,10 @@ function setup() {
 // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 function draw() {
   const sizeOfText = 18;
+  const line50 = height-602.31-0.5;
   background(10);
 
   for (let country = 0; country < arrayOfCountries.length; country++) {
-    // countries
     arrayOfCountries[country].drawCountry();
   }
 
@@ -122,13 +122,19 @@ function draw() {
   for (let i = 0; i < selectedCountries.length; i++) {
     const yCoordinate = 70 + i * 20;
     const xCoordinate = innerWidth - 200;
-    if (mouseY < yCoordinate && mouseY > yCoordinate - sizeOfText && mouseX > xCoordinate) {
+    //add an event listener if the mouse is released over the text
+    if ((mouseY < yCoordinate && mouseY > yCoordinate - sizeOfText && mouseX > xCoordinate)){
       currentIndex = i;
-      arrayOfCountries[i].overMe = true;
-    } else {
-      arrayOfCountries[i].overMe = false;
-    }
-    text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
+      if (mouseIsPressed) {
+        arrayOfCountries[currentIndex].overMe = true;
+        console.log(arrayOfCountries[currentIndex]);
+      } else {
+        arrayOfCountries[currentIndex].overMe = false;
+      }
+
+    } 
+    
+    text(arrayOfCountries[i].myName, xCoordinate, yCoordinate); // draw the text
   }
 
   // 50% line and base lines
@@ -136,7 +142,7 @@ function draw() {
   strokeWeight(3);
   text("50%", 0, 240);
   stroke(255, 0, 0);
-  line(40, 232.76923076923072, width - 250, 232.76923076923072);
+  line(40, line50, width - 250, line50);
   stroke(255);
   strokeWeight(3);
   line(40, baseLine, width - 225, baseLine);
@@ -154,12 +160,15 @@ function draw() {
     pop();
   }
 
+  console.log(isOverLegend());
 } // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 
 function mouseReleased() {
-  for (let country = 0; country < arrayOfCountries.length; country++) {
-    // countries
-    arrayOfCountries[country].clickOverMe();
+  const hoverObj = isOverLegend();
+  for (let i = 0; i < selectedCountries.length; i++) {
+    if (hoverObj.overIndex === i && hoverObj.overAny) {
+      arrayOfCountries[hoverObj.overIndex].selected = !arrayOfCountries[hoverObj.overIndex].selected;
+    } 
   }
 }
 
@@ -171,10 +180,19 @@ function isThere(candidate) {
   return answer;
 }
 
-/*function isMouseInsideText(message, messageX, messageY) {
-  let messageWidth = textWidth(message);
-  let messageTop = messageY - textAscent();
-  let messageBottom = messageY + textDescent();
-
-  return mouseX > messageX && mouseX < messageX + messageWidth && mouseY > messageTop && mouseY < messageBottom;
-}*/
+function isOverLegend(){
+  let resultObj = {
+    overAny: false,
+    overIndex: 0
+  }
+  for (let i = 0; i < selectedCountries.length; i++) {
+    const yCoordinate = 70 + i * 20;
+    const xCoordinate = innerWidth - 200;
+    //add an event listener if the mouse is released over the text
+    if ((mouseY < yCoordinate && mouseY > yCoordinate - 18 && mouseX > xCoordinate)){
+      resultObj.overIndex = i;
+      resultObj.overAny = true;
+      } 
+  }
+  return resultObj;
+}
