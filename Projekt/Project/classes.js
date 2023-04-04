@@ -44,14 +44,17 @@ class Country {
 
       ellipse(this.arrayOfpoints[year].x, this.arrayOfpoints[year].y, 4, 4);
       stroke(this.myColorNormal);
-      if (year > 0 && !this.overMe) line(this.arrayOfpoints[year - 1].x, this.arrayOfpoints[year - 1].y, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y);
-      else if (year > 0 && this.overMe) {
+      if (year > 0 && !this.overMe) {
+        line(this.arrayOfpoints[year - 1].x, this.arrayOfpoints[year - 1].y, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y);
+      } else if (year > 0 && this.overMe) {
         stroke(255);
         line(this.arrayOfpoints[year - 1].x, this.arrayOfpoints[year - 1].y, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y);
       }
 
       //This is for the country code to appear when the country is clicked
-      if (this.selected) {
+      if (year > 0 && this.selected) {
+        stroke(255);
+        line(this.arrayOfpoints[year - 1].x, this.arrayOfpoints[year - 1].y, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y);
         fill(200);
         noStroke();
         textSize(18);

@@ -90,14 +90,11 @@ function draw() {
     const xCoordinate = innerWidth - 200;
     if (mouseY < yCoordinate && mouseY > yCoordinate - sizeOfText && mouseX > xCoordinate) {
       currentIndex = i;
-      arrayOfCountries[i].selected = true;
+      arrayOfCountries[i].overMe = true;
     } else {
-      arrayOfCountries[i].selected = false;
+      arrayOfCountries[i].overMe = false;
     }
-    push();
-    textSize(18);
     text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
-    pop();
   }
 
   // 50% line and base lines
