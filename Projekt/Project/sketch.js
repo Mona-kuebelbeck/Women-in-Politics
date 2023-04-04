@@ -9,11 +9,13 @@ let names = [];
 function preload() {
   POF_data = loadTable("data/POF.csv", "csv", "header");
   GII_data = loadTable("data/GII.csv", "csv", "header");
+  myFont = loadFont('assets/AvenirNextLTPro-Regular.otf');
 } // -------------------------------------------------------  PRELOAD  ----------------------------------------------------
 
 // --------------------------------------------------------  SET UP ----------------------------------------------------
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
+  textFont(myFont);
   // verifying that the data has been uploaded correctly -------------------------
   console.log(" total rows in POF_data: " + POF_data.getRowCount());
   console.log(" total columns in POF_data: " + POF_data.getColumnCount());
