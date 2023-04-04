@@ -1,7 +1,7 @@
 let POF_data;
 let arrayOfCountries = [];
 let baseLine = 0;
-let selectedCountries = ["ARG", "AUS", "AUT", "BDI", "BEL", "BLR", "BOL", "BRA", "CAN", "CHE", "CHL", "CHN", "CRI", "CUB", "DEU", "DNK", "DZA", "ECU", "ESP", "ETH", "FIN", "FRA", "GBR", "GRC", "IND", "IRL", "IRQ", "ISL", "ITA", "JPN", "KOR", "LUX", "MEX", "MKD", "NAM", "NIC", "NLD", "NOR", "NPL", "NZL", "PER", "POL", "PRK", "PRT", "RUS", "RWA", "SEN", "SGP", "SRB", "SVN", "SWE", "SYC", "UKR", "USA", "WLD", "ZAF"];
+let selectedCountries = ["AUS", "AUT", "BDI", "BEL", "BLR", "BOL", "CAN", "CHE", "CHL", "CHN", "CRI", "CUB", "DEU", "DNK", "DZA", "ECU", "ESP", "ETH", "FIN", "FRA", "GBR", "IND", "IRL", "IRQ", "ISL", "ITA", "JPN", "KOR", "LUX", "MEX", "MKD", "NAM", "NIC", "NLD", "NOR", "NPL", "NZL", "PER", "POL", "PRK", "PRT", "RUS", "RWA", "SEN", "SRB", "SWE", "SYC", "UKR", "USA", "WLD", "ZAF"];
 
 let names = [];
 
@@ -91,7 +91,7 @@ function draw() {
   let currentIndex = 0;
 
   for (let i = 0; i < selectedCountries.length; i++) {
-    const yCoordinate = 80 + i * 15;
+    const yCoordinate = 70 + i * 15;
     const xCoordinate = innerWidth - 180;
     if (mouseY < yCoordinate && mouseY > yCoordinate - sizeOfText && mouseX > xCoordinate) {
       currentIndex = i;
