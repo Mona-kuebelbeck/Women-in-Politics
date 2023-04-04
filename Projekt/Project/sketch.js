@@ -5,10 +5,6 @@ let selectedCountries = ["ARE", "BEL", "BLR", "BOL", "CHL", "CHN", "CRI", "CUB",
 
 let names = [];
 
-let message = "World";
-let messageX = innerWidth - 180;
-let messageY = 50;
-
 // --------------------------------------------------------  PRELOAD  ----------------------------------------------------
 function preload() {
   POF_data = loadTable("data/POF.csv", "csv", "header");
@@ -73,7 +69,6 @@ function setup() {
 
 // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 function draw() {
-
   const sizeOfText = 18;
   background(10);
 
@@ -105,7 +100,7 @@ function draw() {
     pop();
   }
 
-  text(message, messageX, messageY);
+  // 50% line and base lines
   fill(255, 0, 0);
   strokeWeight(3);
   text("50%", 0, 240);
@@ -116,6 +111,7 @@ function draw() {
   line(40, baseLine, width - 225, baseLine);
   line(40, baseLine, 40, 100);
 
+  //Timeline
   for (let year = 1997; year < 2022; year++) {
     let x = map(year, 1997, 2021, 50, width - 260);
     push();
@@ -133,14 +129,6 @@ function mouseReleased() {
     // countries
     arrayOfCountries[country].clickOverMe();
   }
-
-  if (isMouseInsideText(message, messageX, messageY)) {
-    if (arrayOfCountries[14].selected === true) {
-      arrayOfCountries[14].selected = false;
-    } else {
-      arrayOfCountries[14].selected = true;
-    }
-  }
 }
 
 function isThere(candidate) {
@@ -151,10 +139,10 @@ function isThere(candidate) {
   return answer;
 }
 
-function isMouseInsideText(message, messageX, messageY) {
+/*function isMouseInsideText(message, messageX, messageY) {
   let messageWidth = textWidth(message);
   let messageTop = messageY - textAscent();
   let messageBottom = messageY + textDescent();
 
   return mouseX > messageX && mouseX < messageX + messageWidth && mouseY > messageTop && mouseY < messageBottom;
-}
+}*/
