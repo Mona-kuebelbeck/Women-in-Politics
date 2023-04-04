@@ -77,7 +77,7 @@ class Country {
         ifAny = true;
       }
     }
-    this.overMe = ifAny;
+    //this.overMe = ifAny;
   }
 
   clickOverMe() {
