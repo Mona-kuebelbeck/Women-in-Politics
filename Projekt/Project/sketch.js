@@ -129,10 +129,10 @@ function draw() {
   background(10);
 
   // 50% line and base lines
-  fill(50, 100, 0);
+  fill(133, 183, 143, 170);
   text("50%", 8, line50);
   strokeWeight(2);
-  stroke(50, 100, 0);
+  stroke(133, 183, 143, 95);
   line(40, line50, width - 250, line50);
   stroke(120);
   line(40, baseLine, width - 225, baseLine);

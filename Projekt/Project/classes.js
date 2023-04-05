@@ -58,9 +58,9 @@ class Country {
       this.arrayOfpoints.push(currentPoint);
     }
 
-    if (this.myCode === "WLD") {
-      this.selected = true;
-    }
+    //if (this.myCode === "WLD") {
+      //this.selected = true;
+    //}
   }
 
   drawCountry() {
