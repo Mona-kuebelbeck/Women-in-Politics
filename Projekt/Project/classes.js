@@ -72,19 +72,19 @@ class Country {
 
       // if-Schleifen Wahnsinn für verschiedene Punktefarben qwq (Größe ließe sich auch noch anpassen ig)
       // mehr Zwischenstufen? z.B. bei 0.2 und 0.6 (ggf. auch einfach in 100er-Schritten)
-      let pointsizeVeryHigh = 10; 
-      let pointsizeHigh = 15; 
-      let pointsizeMiddle = 20; 
-      let pointsizeLow = 25;
-      let pointsizeVeryLow = 30; 
+      let pointsizeVeryHigh = 8; 
+      let pointsizeHigh = 12; 
+      let pointsizeMiddle = 16; 
+      let pointsizeLow = 20;
+      let pointsizeVeryLow = 24; 
       /*let punktfarbeHigh = color(255);
       let punktfarbeLow = color(255);
       let punktfarbeMiddle = color(255);*/
-      let punktfarbeVeryHigh = color(100,100,100, 30);
-      let punktfarbeHigh = color(100,200,130, 20);
-      let punktfarbeMiddle = color(100,255,170, 10);
-      let punktfarbeLow = color(100,255,200, 10);
-      let punktfarbeVeryLow = color(255, 10);
+      let punktfarbeVeryHigh = color(255,0,0,10);
+      let punktfarbeHigh = color(255,104,70,10);
+      let punktfarbeMiddle = color(255,158,129,10);
+      let punktfarbeLow = color(255,207,191,10);
+      let punktfarbeVeryLow = color(255,255,255,10);
 
       noStroke();
 
