@@ -132,7 +132,7 @@ function draw() {
     arrayOfCountries[country].drawCountry();
   }
 
-  //noStroke();
+  noStroke();
   fill(255);
   textSize(sizeOfText);
   text("Proportion of seats held by women in national parliaments (%)", 25, 40);
@@ -143,7 +143,6 @@ function draw() {
   for (let i = 0; i < selectedCountries.length; i++) {
     const yCoordinate = 70 + i * 20;
     const xCoordinate = innerWidth - 200;
-    //add an event listener if the mouse is released over the text
     if ((mouseY < yCoordinate && mouseY > yCoordinate - sizeOfText && mouseX > xCoordinate)){
       currentIndex = i;
       arrayOfCountries[currentIndex].overMe = true;
@@ -153,27 +152,27 @@ function draw() {
       arrayOfCountries[currentIndex].overMe = false;
     }
     
-    text(arrayOfCountries[i].myName, xCoordinate, yCoordinate); // draw the text
+    text(arrayOfCountries[i].myName, xCoordinate, yCoordinate); // draw the legend
   }
 
   // 50% line and base lines
   fill(255, 0, 0);
-  //strokeWeight(3);
+  strokeWeight(3);
   text("50%", 0, 240);
   stroke(255, 0, 0);
   line(40, line50, width - 250, line50);
   stroke(255);
-  //strokeWeight(3);
   line(40, baseLine, width - 225, baseLine);
   line(40, baseLine, 40, 100);
 
-  //Timeline
+  //Draw Timeline
   for (let year = 1997; year < 2022; year++) {
     let x = map(year, 1997, 2021, 50, width - 260);
     push();
     translate(x, baseLine + 50);
     rotate(-PI / 4);
     fill(255);
+    noStroke();
     text(year, 0, 0);
     pop();
   }
@@ -186,7 +185,6 @@ function mouseReleased() {
       arrayOfCountries[hoverObj.overIndex].selected = true;
       console.log("click over text");
       fill(255);
-      text(arrayOfCountries[hoverObj.overIndex].myName, 500, 500);
 
     } 
     else if (hoverObj.overIndex === i && hoverObj.overAny && arrayOfCountries[hoverObj.overIndex].selected === true){
@@ -214,9 +212,9 @@ function isOverLegend(){
     if ((mouseY < yCoordinate && mouseY > yCoordinate - 18 && mouseX > xCoordinate)){
       resultObj.overIndex = i;
       resultObj.overAny = true;
-      fill(255);
-      strokeWeight(1.5);
-      text(arrayOfCountries[i].myName, xCoordinate, yCoordinate); // draw the text
+      // fill(255);
+      // strokeWeight(1.5);
+      // text(arrayOfCountries[i].myName, xCoordinate, yCoordinate); // draw the text
       } 
   }
   return resultObj;

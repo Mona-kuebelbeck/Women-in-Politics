@@ -422,16 +422,19 @@ class Country {
       if (year > 0 && !this.overMe) {
         //Linie normal
         stroke(220, 220, 220, 50);
+        strokeWeight(1);
         line(this.arrayOfpoints[year - 1].x, this.arrayOfpoints[year - 1].y, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y);
       } else if (year > 0 && this.overMe) {
         //Linie hover/selected
         stroke(255);
+        strokeWeight(2);
         line(this.arrayOfpoints[year - 1].x, this.arrayOfpoints[year - 1].y, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y);
       }
 
       //This is for the country code and line to appear when the country is clicked
       if (year > 0 && this.selected) {
         stroke(255);
+        strokeWeight(2.5);
         line(this.arrayOfpoints[year - 1].x, this.arrayOfpoints[year - 1].y, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y);
          fill(200);
         noStroke();
@@ -452,6 +455,12 @@ class Country {
         text(this.myName + " (" + this.arrayOfData[year].x + ")", this.arrayOfpoints[year].x, this.arrayOfpoints[year].y - 45);
         names.push(this.myName);
         text(this.arrayOfData[year].y + " %", this.arrayOfpoints[year].x, this.arrayOfpoints[year].y - 25);
+        push();
+        noFill();
+        stroke(255);
+        strokeWeight(1.5);
+        ellipse(this.arrayOfpoints[year].x, this.arrayOfpoints[year].y, 15, 15)
+        pop();
         ifAny = true;
       }
     }
