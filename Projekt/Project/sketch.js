@@ -63,6 +63,28 @@ function setup() {
       currentCountry.X09 = currentCountryX09;
       let currentCountryX10 = POF_data.getNum(r, 79);
       currentCountry.X10 = currentCountryX10;
+      let currentCountryX11 = POF_data.getNum(r, 80);
+      currentCountry.X11 = currentCountryX11;
+      let currentCountryX12 = POF_data.getNum(r, 81);
+      currentCountry.X12 = currentCountryX12;
+      let currentCountryX13 = POF_data.getNum(r, 82);
+      currentCountry.X13 = currentCountryX13;
+      let currentCountryX14 = POF_data.getNum(r, 83);
+      currentCountry.X14 = currentCountryX14;
+      let currentCountryX15 = POF_data.getNum(r, 84);
+      currentCountry.X15 = currentCountryX15;
+      let currentCountryX16 = POF_data.getNum(r, 85);
+      currentCountry.X16 = currentCountryX16;
+      let currentCountryX17 = POF_data.getNum(r, 86);
+      currentCountry.X17 = currentCountryX17;
+      let currentCountryX18 = POF_data.getNum(r, 87);
+      currentCountry.X18 = currentCountryX18;
+      let currentCountryX19 = POF_data.getNum(r, 88);
+      currentCountry.X19 = currentCountryX19;
+      let currentCountryX20 = POF_data.getNum(r, 89);
+      currentCountry.X20 = currentCountryX20;
+      /*let currentCountryX21 = POF_data.getNum(r, 90);
+      currentCountry.X21 = currentCountryX21;*/
 
       arrayOfCountries.push(currentCountry);
       //console.log(arrayOfCountries);
