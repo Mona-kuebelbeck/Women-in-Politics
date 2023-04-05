@@ -1,9 +1,11 @@
 let POF_data;
 let arrayOfCountries = [];
 let baseLine = 0;
-let selectedCountries = ["ARE", "BEL", "BOL", "CHL", "CHN", "CRI", "CUB", "DEU", "ECU", "ESP", "FIN", "FRA", "GBR", "IND", "IRL", "IRQ", "ISL", "ITA", "JPN", "MEX", "MKD", "NAM", "NIC", "NOR", "NPL", "NZL", "PER", "PRT", "RUS", "RWA", "SEN", "SWE", "USA", "WLD", "ZAF"];
+let selectedCountries = ["WLD", "ARE", "BEL", "BOL", "CHL", "CHN", "CRI", "CUB", "DEU", "ECU", "ESP", "FIN", "FRA", "GBR", "IND", "IRL", "IRQ", "ISL", "ITA", "JPN", "MEX", "MKD", "NAM", "NIC", "NOR", "NPL", "NZL", "PER", "PRT", "RUS", "RWA", "SEN", "SWE", "USA", "ZAF"];
 
 let names = [];
+
+let test;
 
 // --------------------------------------------------------  PRELOAD  ----------------------------------------------------
 function preload() {
@@ -87,7 +89,6 @@ function setup() {
       currentCountry.X21 = currentCountryX21;*/
 
       arrayOfCountries.push(currentCountry);
-      //console.log(arrayOfCountries);
     }
   } // end for  tablaDeAreas --------------------------------------------------
 
@@ -116,7 +117,6 @@ function setup() {
   console.log("number of found countries: " + foundCountries);
 
   for (let country = 0; country < arrayOfCountries.length; country++) {
-    // countries
     //calculates the pixel position of each year in the country
     arrayOfCountries[country].calculatePoints(baseLine);
   }
@@ -124,7 +124,7 @@ function setup() {
 
 // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 function draw() {
-  const sizeOfText = 18;
+  const sizeOfText = 14;
   const line50 = height-602.31-0.5;
   background(10);
 
@@ -134,9 +134,11 @@ function draw() {
 
   noStroke();
   fill(255);
-  textSize(sizeOfText);
-  text("Proportion of seats held by women in national parliaments (%)", 25, 40);
-  text("1997-2021", 25, 60);
+  push();
+  textSize(18);
+  text("Proportion of seats held by women in national parliaments (%)", 40, 40);
+  text("1997-2021", 40, 60);
+  pop();
 
   let currentIndex = 0;
 
@@ -146,20 +148,26 @@ function draw() {
     if ((mouseY < yCoordinate && mouseY > yCoordinate - sizeOfText && mouseX > xCoordinate)){
       currentIndex = i;
       arrayOfCountries[currentIndex].overMe = true;
-      console.log("test" + currentIndex);
+      fill(255);
+      text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
     } 
     else {
       arrayOfCountries[currentIndex].overMe = false;
+      strokeWeight(1);
+      fill(120);
+      text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
     }
-    
-    text(arrayOfCountries[i].myName, xCoordinate, yCoordinate); // draw the legend
+    // if (test === true){
+    //   fill(255,0,0);
+    //   text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
+    // }
   }
 
   // 50% line and base lines
-  fill(255, 0, 0);
-  strokeWeight(3);
-  text("50%", 0, 240);
-  stroke(255, 0, 0);
+  fill(255,0,0);
+  text("50%", 8, 235);
+  strokeWeight(2);
+  stroke(255,0,0);
   line(40, line50, width - 250, line50);
   stroke(255);
   line(40, baseLine, width - 225, baseLine);
@@ -171,24 +179,29 @@ function draw() {
     push();
     translate(x, baseLine + 50);
     rotate(-PI / 4);
-    fill(255);
+    fill(200);
     noStroke();
     text(year, 0, 0);
     pop();
   }
+
 } // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 
 function mouseReleased() {
   const hoverObj = isOverLegend();
   for (let i = 0; i < selectedCountries.length; i++) {
+    const yCoordinate = 70 + i * 20;
+    const xCoordinate = innerWidth - 200;
     if (hoverObj.overIndex === i && hoverObj.overAny && arrayOfCountries[hoverObj.overIndex].selected === false) {
       arrayOfCountries[hoverObj.overIndex].selected = true;
-      console.log("click over text");
-      fill(255);
+      test = true;
+      console.log("click over text (select): " + hoverObj.overIndex + test);
 
     } 
     else if (hoverObj.overIndex === i && hoverObj.overAny && arrayOfCountries[hoverObj.overIndex].selected === true){
       arrayOfCountries[hoverObj.overIndex].selected = false;
+      test = false;
+      console.log("click over text (deselect): " + hoverObj.overIndex + test);
     }
   }
 }
@@ -212,9 +225,6 @@ function isOverLegend(){
     if ((mouseY < yCoordinate && mouseY > yCoordinate - 18 && mouseX > xCoordinate)){
       resultObj.overIndex = i;
       resultObj.overAny = true;
-      // fill(255);
-      // strokeWeight(1.5);
-      // text(arrayOfCountries[i].myName, xCoordinate, yCoordinate); // draw the text
       } 
   }
   return resultObj;

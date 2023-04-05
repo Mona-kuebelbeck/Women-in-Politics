@@ -442,7 +442,7 @@ class Country {
         line(this.arrayOfpoints[year - 1].x, this.arrayOfpoints[year - 1].y, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y);
          fill(200);
         noStroke();
-        textSize(18);
+        textSize(14);
         text(this.myCode, this.arrayOfpoints[this.arrayOfData.length - 1].x + 5, this.arrayOfpoints[this.arrayOfData.length - 1].y);
       }
     }
@@ -455,7 +455,7 @@ class Country {
       if (distance < 5) {
         fill(255);
         noStroke();
-        textSize(18);
+        textSize(14);
         text(this.myName + " (" + this.arrayOfData[year].x + ")", this.arrayOfpoints[year].x, this.arrayOfpoints[year].y - 45);
         names.push(this.myName);
         text(this.arrayOfData[year].y + " %", this.arrayOfpoints[year].x, this.arrayOfpoints[year].y - 25);
@@ -468,7 +468,6 @@ class Country {
         ifAny = true;
       }
     }
-    //this.overMe = ifAny;
   }
 
   clickOverMe() {
