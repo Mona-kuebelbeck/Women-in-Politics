@@ -1,32 +1,29 @@
 let POF_data;
+let GII_data;
 let arrayOfCountries = [];
-let baseLine = 0;
 let selectedCountries = ["WLD", "ARE", "BEL", "BOL", "CHL", "CHN", "CRI", "CUB", "DEU", "ECU", "ESP", "FIN", "FRA", "GBR", "IND", "IRL", "IRQ", "ISL", "ITA", "JPN", "MEX", "MKD", "NAM", "NIC", "NOR", "NPL", "NZL", "PER", "PRT", "RUS", "RWA", "SEN", "SWE", "USA", "ZAF"];
-
 let names = [];
-
-let test;
+let countrySelected;
+let baseLine;
+const sizeOfText = 14;
 
 // --------------------------------------------------------  PRELOAD  ----------------------------------------------------
 function preload() {
   POF_data = loadTable("data/POF.csv", "csv", "header");
   GII_data = loadTable("data/GII.csv", "csv", "header");
   myFont = loadFont("assets/AvenirNextLTPro-Regular.otf");
-} // -------------------------------------------------------  PRELOAD  ----------------------------------------------------
+} 
+// -------------------------------------------------------  PRELOAD  ----------------------------------------------------
+
 
 // --------------------------------------------------------  SET UP ----------------------------------------------------
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   textFont(myFont);
-  // verifying that the data has been uploaded correctly -------------------------
-  console.log(" total rows in POF_data: " + POF_data.getRowCount());
-  console.log(" total columns in POF_data: " + POF_data.getColumnCount());
-  console.log(" total rows in GII_data: " + GII_data.getRowCount());
-  console.log(" total columns in GII_data: " + GII_data.getColumnCount());
 
   baseLine = height - 100;
 
-  //creates and fills country object data --------------------------
+  //creates and fills country object data
   let currentCountry;
   for (let r = 0; r < POF_data.getRowCount(); r++) {
     let currentCountryCODE = POF_data.getString(r, 1);
@@ -90,20 +87,17 @@ function setup() {
 
       arrayOfCountries.push(currentCountry);
     }
-  } // end for  tablaDeAreas --------------------------------------------------
+  }
 
-  // save the years data in each country object
+  // save the year data in each country object
   foundCountries = 0;
   for (let r = 0; r < POF_data.getRowCount(); r++) {
-    // runs through the whole table
     let currentCountryCODE = POF_data.getString(r, 1);
     if (isThere(currentCountryCODE)) {
       for (let country = 0; country < arrayOfCountries.length; country++) {
-        // runs through the whole object list
         if (arrayOfCountries[country].myCode === currentCountryCODE) {
           foundCountries++;
-          let index = 41; // before we have: Country Name & Country Code
-
+          let index = 41;
           for (let year = 1997; year < 2022; year++) {
             let currentPOF = POF_data.getString(r, index);
             let currentPaar = createVector(year, currentPOF); // small array with [year,POF]
@@ -114,17 +108,17 @@ function setup() {
       }
     }
   }
-  console.log("number of found countries: " + foundCountries);
 
+  //calculates the pixel position of each year in the country
   for (let country = 0; country < arrayOfCountries.length; country++) {
-    //calculates the pixel position of each year in the country
     arrayOfCountries[country].calculatePoints(baseLine);
   }
-} // --------------------------------------------------------  SET UP ----------------------------------------------------
+}
+// --------------------------------------------------------  SET UP ----------------------------------------------------
+
 
 // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 function draw() {
-  const sizeOfText = 14;
   const line50 = height - 602.31 - 0.5;
   background(10);
 
@@ -135,23 +129,23 @@ function draw() {
   stroke(133, 183, 143, 95);
   line(40, line50, width - 250, line50);
   stroke(120);
-  line(40, baseLine, width - 225, baseLine);
-  line(40, baseLine, 40, 100);
+  line(40, baseLine, width - 240, baseLine);
+  line(40, baseLine, 40, 80);
 
+  // draw the country objects
   for (let country = 0; country < arrayOfCountries.length; country++) {
     arrayOfCountries[country].drawCountry();
   }
 
+  // draw the header
   noStroke();
   fill(255);
-  push();
   textSize(18);
   text("Proportion of seats held by women in national parliaments (%)", 40, 40);
   text("1997-2021", 40, 60);
-  pop();
 
+  //check if mouse is over a country and draw the name
   let currentIndex = 0;
-
   for (let i = 0; i < selectedCountries.length; i++) {
     const yCoordinate = 70 + i * 20;
     const xCoordinate = innerWidth - 200;
@@ -159,18 +153,16 @@ function draw() {
       currentIndex = i;
       arrayOfCountries[currentIndex].overMe = true;
       fill(255);
+      textSize(sizeOfText);
       text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
     }
     else {
       arrayOfCountries[currentIndex].overMe = false;
       strokeWeight(1);
       fill(120);
+      textSize(sizeOfText);
       text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
     }
-    // if (test === true){
-    //   fill(255,0,0);
-    //   text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
-    // }
   }
 
   //Draw Timeline
@@ -185,8 +177,10 @@ function draw() {
     pop();
   }
 
-} // -----------------------------------------------------------  DRAW  ----------------------------------------------------
+} 
+// -----------------------------------------------------------  DRAW  ----------------------------------------------------
 
+// -----------------------------------------------------------  FUNCTIONS  ----------------------------------------------------
 function mouseReleased() {
   const hoverObj = isOverLegend();
   for (let i = 0; i < selectedCountries.length; i++) {
@@ -194,14 +188,11 @@ function mouseReleased() {
     const xCoordinate = innerWidth - 200;
     if (hoverObj.overIndex === i && hoverObj.overAny && arrayOfCountries[hoverObj.overIndex].selected === false) {
       arrayOfCountries[hoverObj.overIndex].selected = true;
-      test = true;
-      console.log("click over text (select): " + hoverObj.overIndex + test);
-
+      countrySelected = true;
     }
     else if (hoverObj.overIndex === i && hoverObj.overAny && arrayOfCountries[hoverObj.overIndex].selected === true) {
       arrayOfCountries[hoverObj.overIndex].selected = false;
-      test = false;
-      console.log("click over text (deselect): " + hoverObj.overIndex + test);
+      countrySelected = false;
     }
   }
 }
@@ -219,6 +210,7 @@ function isOverLegend() {
     overAny: false,
     overIndex: 0
   }
+  
   for (let i = 0; i < selectedCountries.length; i++) {
     const yCoordinate = 70 + i * 20;
     const xCoordinate = innerWidth - 200;
@@ -229,3 +221,4 @@ function isOverLegend() {
   }
   return resultObj;
 }
+// -----------------------------------------------------------  END OF FUNCTIONS  ----------------------------------------------------

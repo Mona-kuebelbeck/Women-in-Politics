@@ -58,25 +58,18 @@ class Country {
       this.arrayOfpoints.push(currentPoint);
     }
 
-    //if (this.myCode === "WLD") {
-      //this.selected = true;
-    //}
+    if (this.myCode === "WLD") {
+      this.selected = true;
+    }
   }
 
   drawCountry() {
     this.isOverMe();
 
     for (let year = 0; year < 25; year++) {
-      if (this.overMe || this.selected) {
-        fill(this.myColorOver);
-        stroke(this.myColorOver);
-        //strokeWeight(3);
-      } else {
         fill(this.myColorNormal);
         stroke(this.myColorNormal);
-        //strokeWeight(1);
-      }
-
+      
       // if-Schleifen Wahnsinn für verschiedene Punktefarben qwq
 
       //Größen: 8,12, 16, 20, 24
