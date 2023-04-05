@@ -37,7 +37,7 @@ function setup() {
       currentCountry.myCode = currentCountryCODE;
 
       // hier wird der Index ausgelesen/gespeichert
-      let currentCountryX97 = POF_data.getNum(r, 66); 
+      let currentCountryX97 = POF_data.getNum(r, 66);
       currentCountry.X97 = currentCountryX97;
       let currentCountryX98 = POF_data.getNum(r, 67);
       currentCountry.X98 = currentCountryX98;
@@ -125,8 +125,18 @@ function setup() {
 // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 function draw() {
   const sizeOfText = 14;
-  const line50 = height-602.31-0.5;
+  const line50 = height - 602.31 - 0.5;
   background(10);
+
+  // 50% line and base lines
+  fill(50, 100, 0);
+  text("50%", 8, line50);
+  strokeWeight(2);
+  stroke(50, 100, 0);
+  line(40, line50, width - 250, line50);
+  stroke(120);
+  line(40, baseLine, width - 225, baseLine);
+  line(40, baseLine, 40, 100);
 
   for (let country = 0; country < arrayOfCountries.length; country++) {
     arrayOfCountries[country].drawCountry();
@@ -145,12 +155,12 @@ function draw() {
   for (let i = 0; i < selectedCountries.length; i++) {
     const yCoordinate = 70 + i * 20;
     const xCoordinate = innerWidth - 200;
-    if ((mouseY < yCoordinate && mouseY > yCoordinate - sizeOfText && mouseX > xCoordinate)){
+    if ((mouseY < yCoordinate && mouseY > yCoordinate - sizeOfText && mouseX > xCoordinate)) {
       currentIndex = i;
       arrayOfCountries[currentIndex].overMe = true;
       fill(255);
       text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
-    } 
+    }
     else {
       arrayOfCountries[currentIndex].overMe = false;
       strokeWeight(1);
@@ -163,23 +173,13 @@ function draw() {
     // }
   }
 
-  // 50% line and base lines
-  fill(255,0,0);
-  text("50%", 8, 235);
-  strokeWeight(2);
-  stroke(255,0,0);
-  line(40, line50, width - 250, line50);
-  stroke(255);
-  line(40, baseLine, width - 225, baseLine);
-  line(40, baseLine, 40, 100);
-
   //Draw Timeline
   for (let year = 1997; year < 2022; year++) {
     let x = map(year, 1997, 2021, 50, width - 260);
     push();
     translate(x, baseLine + 50);
     rotate(-PI / 4);
-    fill(200);
+    fill(120);
     noStroke();
     text(year, 0, 0);
     pop();
@@ -197,8 +197,8 @@ function mouseReleased() {
       test = true;
       console.log("click over text (select): " + hoverObj.overIndex + test);
 
-    } 
-    else if (hoverObj.overIndex === i && hoverObj.overAny && arrayOfCountries[hoverObj.overIndex].selected === true){
+    }
+    else if (hoverObj.overIndex === i && hoverObj.overAny && arrayOfCountries[hoverObj.overIndex].selected === true) {
       arrayOfCountries[hoverObj.overIndex].selected = false;
       test = false;
       console.log("click over text (deselect): " + hoverObj.overIndex + test);
@@ -214,7 +214,7 @@ function isThere(candidate) {
   return answer;
 }
 
-function isOverLegend(){
+function isOverLegend() {
   let resultObj = {
     overAny: false,
     overIndex: 0
@@ -222,10 +222,10 @@ function isOverLegend(){
   for (let i = 0; i < selectedCountries.length; i++) {
     const yCoordinate = 70 + i * 20;
     const xCoordinate = innerWidth - 200;
-    if ((mouseY < yCoordinate && mouseY > yCoordinate - 18 && mouseX > xCoordinate)){
+    if ((mouseY < yCoordinate && mouseY > yCoordinate - 18 && mouseX > xCoordinate)) {
       resultObj.overIndex = i;
       resultObj.overAny = true;
-      } 
+    }
   }
   return resultObj;
 }
