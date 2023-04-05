@@ -6,6 +6,7 @@ class Country {
     this.arrayOfpoints = [];
     this.overMe = false;
     this.selected = false;
+    this.pointSize;
 
     this.X97 = 0;
     this.X98 = 0;
@@ -70,549 +71,663 @@ class Country {
         //strokeWeight(1);
       }
 
-      // if-Schleifen Wahnsinn für verschiedene Punktefarben qwq (Größe ließe sich auch noch anpassen ig)
-      // mehr Zwischenstufen? z.B. bei 0.2 und 0.6 (ggf. auch einfach in 100er-Schritten)
-      let pointsizeVeryHigh = 8; 
-      let pointsizeHigh = 12; 
-      let pointsizeMiddle = 16; 
-      let pointsizeLow = 20;
-      let pointsizeVeryLow = 24; 
-      /*let punktfarbeHigh = color(255);
-      let punktfarbeLow = color(255);
-      let punktfarbeMiddle = color(255);*/
-      let punktfarbeVeryHigh = color(255,0,0,7);
-      let punktfarbeHigh = color(255,104,70,7);
+      // if-Schleifen Wahnsinn für verschiedene Punktefarben qwq
+  
+      let punktfarbeVeryHigh = color(255,0,0,5);
+      let punktfarbeHigh = color(255,104,70,5);
       let punktfarbeMiddle = color(255,158,129,5);
       let punktfarbeLow = color(255,207,191,5);
-      let punktfarbeVeryLow = color(255,255,255,7);
+      let punktfarbeVeryLow = color(255,255,255,5);
+
+      //Größen: 8,12, 16, 20, 24
 
       noStroke();
 
       if (this.arrayOfData[0] && this.X97 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[0].x, this.arrayOfpoints[0].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[0].x, this.arrayOfpoints[0].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[0] && this.X97 > 0.1 && this.X97 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[0].x, this.arrayOfpoints[0].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[0].x, this.arrayOfpoints[0].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[0] && this.X97 > 0.2 && this.X97 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[0].x, this.arrayOfpoints[0].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[0].x, this.arrayOfpoints[0].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[0] && this.X97 > 0.3 && this.X97 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[0].x, this.arrayOfpoints[0].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[0].x, this.arrayOfpoints[0].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[0] && this.X97 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[0].x, this.arrayOfpoints[0].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[0].x, this.arrayOfpoints[0].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[1] && this.X98 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[1].x, this.arrayOfpoints[1].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[1].x, this.arrayOfpoints[1].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[1] && this.X98 > 0.1 && this.X98 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[1].x, this.arrayOfpoints[1].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[1].x, this.arrayOfpoints[1].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[1] && this.X98 > 0.2 && this.X98 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[1].x, this.arrayOfpoints[1].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[1].x, this.arrayOfpoints[1].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[1] && this.X98 > 0.3 && this.X98 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[1].x, this.arrayOfpoints[1].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[1].x, this.arrayOfpoints[1].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[1] && this.X98 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[1].x, this.arrayOfpoints[1].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[1].x, this.arrayOfpoints[1].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[2] && this.X99 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[2].x, this.arrayOfpoints[2].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[2].x, this.arrayOfpoints[2].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[2] && this.X99 > 0.1 && this.X99 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[2].x, this.arrayOfpoints[2].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[2].x, this.arrayOfpoints[2].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[2] && this.X99 > 0.2 && this.X99 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[2].x, this.arrayOfpoints[2].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[2].x, this.arrayOfpoints[2].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[2] && this.X99 > 0.3 && this.X99 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[2].x, this.arrayOfpoints[2].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[2].x, this.arrayOfpoints[2].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[2] && this.X99 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[2].x, this.arrayOfpoints[2].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[2].x, this.arrayOfpoints[2].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[3] && this.X00 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[3].x, this.arrayOfpoints[3].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[3].x, this.arrayOfpoints[3].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[3] && this.X00 > 0.1 && this.X00 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[3].x, this.arrayOfpoints[3].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[3].x, this.arrayOfpoints[3].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[3] && this.X00 > 0.2 && this.X00 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[3].x, this.arrayOfpoints[3].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[3].x, this.arrayOfpoints[3].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[3] && this.X00 > 0.3 && this.X00 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[3].x, this.arrayOfpoints[3].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[3].x, this.arrayOfpoints[3].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[3] && this.X00 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[3].x, this.arrayOfpoints[3].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[3].x, this.arrayOfpoints[3].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[4] && this.X01 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[4].x, this.arrayOfpoints[4].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[4].x, this.arrayOfpoints[4].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[4] && this.X01 > 0.1 && this.X01 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[4].x, this.arrayOfpoints[4].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[4].x, this.arrayOfpoints[4].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[4] && this.X01 > 0.2 && this.X01 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[4].x, this.arrayOfpoints[4].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[4].x, this.arrayOfpoints[4].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[4] && this.X01 > 0.3 && this.X01 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[4].x, this.arrayOfpoints[4].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[4].x, this.arrayOfpoints[4].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[4] && this.X01 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[4].x, this.arrayOfpoints[4].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[4].x, this.arrayOfpoints[4].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[5] && this.X02 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[5].x, this.arrayOfpoints[5].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[5].x, this.arrayOfpoints[5].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[5] && this.X02 > 0.1 && this.X02 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[5].x, this.arrayOfpoints[5].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[5].x, this.arrayOfpoints[5].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[5] && this.X02 > 0.2 && this.X02 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[5].x, this.arrayOfpoints[5].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[5].x, this.arrayOfpoints[5].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[5] && this.X02 > 0.3 && this.X02 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[5].x, this.arrayOfpoints[5].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[5].x, this.arrayOfpoints[5].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[5] && this.X02 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[5].x, this.arrayOfpoints[5].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[5].x, this.arrayOfpoints[5].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[6] && this.X03 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[6].x, this.arrayOfpoints[6].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[6].x, this.arrayOfpoints[6].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[6] && this.X03 > 0.1 && this.X03 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[6].x, this.arrayOfpoints[6].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[6].x, this.arrayOfpoints[6].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[6] && this.X03 > 0.2 && this.X03 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[6].x, this.arrayOfpoints[6].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[6].x, this.arrayOfpoints[6].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[6] && this.X03 > 0.3 && this.X03 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[6].x, this.arrayOfpoints[6].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[6].x, this.arrayOfpoints[6].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[6] && this.X03 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[6].x, this.arrayOfpoints[6].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[6].x, this.arrayOfpoints[6].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[7] && this.X04 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[7].x, this.arrayOfpoints[7].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[7].x, this.arrayOfpoints[7].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[7] && this.X04 > 0.1 && this.X04 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[7].x, this.arrayOfpoints[7].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[7].x, this.arrayOfpoints[7].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[7] && this.X04 > 0.2 && this.X04 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[7].x, this.arrayOfpoints[7].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[7].x, this.arrayOfpoints[7].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[7] && this.X04 > 0.3 && this.X04 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[7].x, this.arrayOfpoints[7].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[7].x, this.arrayOfpoints[7].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[7] && this.X04 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[7].x, this.arrayOfpoints[7].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[7].x, this.arrayOfpoints[7].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[8] && this.X05 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[8].x, this.arrayOfpoints[8].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[8].x, this.arrayOfpoints[8].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[8] && this.X05 > 0.1 && this.X05 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[8].x, this.arrayOfpoints[8].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[8].x, this.arrayOfpoints[8].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[8] && this.X05 > 0.2 && this.X05 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[8].x, this.arrayOfpoints[8].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[8].x, this.arrayOfpoints[8].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[8] && this.X05 > 0.3 && this.X05 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[8].x, this.arrayOfpoints[8].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[8].x, this.arrayOfpoints[8].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[8] && this.X05 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[8].x, this.arrayOfpoints[8].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[8].x, this.arrayOfpoints[8].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[9] && this.X06 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[9].x, this.arrayOfpoints[9].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[9].x, this.arrayOfpoints[9].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[9] && this.X06 > 0.1 && this.X06 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[9].x, this.arrayOfpoints[9].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[9].x, this.arrayOfpoints[9].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[9] && this.X06 > 0.2 && this.X06 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[9].x, this.arrayOfpoints[9].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[9].x, this.arrayOfpoints[9].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[9] && this.X06 > 0.3 && this.X06 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[9].x, this.arrayOfpoints[9].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[9].x, this.arrayOfpoints[9].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[9] && this.X06 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[9].x, this.arrayOfpoints[9].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[9].x, this.arrayOfpoints[9].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[10] && this.X07 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[10].x, this.arrayOfpoints[10].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[10].x, this.arrayOfpoints[10].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[10] && this.X07 > 0.1 && this.X07 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[10].x, this.arrayOfpoints[10].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[10].x, this.arrayOfpoints[10].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[10] && this.X07 > 0.2 && this.X07 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[10].x, this.arrayOfpoints[10].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[10].x, this.arrayOfpoints[10].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[10] && this.X07 > 0.3 && this.X07 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[10].x, this.arrayOfpoints[10].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[10].x, this.arrayOfpoints[10].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[10] && this.X07 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[10].x, this.arrayOfpoints[10].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[10].x, this.arrayOfpoints[10].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[11] && this.X08 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[11].x, this.arrayOfpoints[11].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[11].x, this.arrayOfpoints[11].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[11] && this.X08 > 0.1 && this.X08 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[11].x, this.arrayOfpoints[11].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[11].x, this.arrayOfpoints[11].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[11] && this.X08 > 0.2 && this.X08 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[11].x, this.arrayOfpoints[11].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[11].x, this.arrayOfpoints[11].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[11] && this.X08 > 0.3 && this.X08 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[11].x, this.arrayOfpoints[11].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[11].x, this.arrayOfpoints[11].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[11] && this.X08 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[11].x, this.arrayOfpoints[11].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[11].x, this.arrayOfpoints[11].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[12] && this.X09 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[12].x, this.arrayOfpoints[12].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[12].x, this.arrayOfpoints[12].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[12] && this.X09 > 0.1 && this.X09 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[12].x, this.arrayOfpoints[12].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[12].x, this.arrayOfpoints[12].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[12] && this.X09 > 0.2 && this.X09 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[12].x, this.arrayOfpoints[12].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[12].x, this.arrayOfpoints[12].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[12] && this.X09 > 0.3 && this.X09 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[12].x, this.arrayOfpoints[12].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[12].x, this.arrayOfpoints[12].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[12] && this.X09 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[12].x, this.arrayOfpoints[12].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[12].x, this.arrayOfpoints[12].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[13] && this.X10 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[13].x, this.arrayOfpoints[13].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[13].x, this.arrayOfpoints[13].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[13] && this.X10 > 0.1 && this.X10 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[13].x, this.arrayOfpoints[13].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[13].x, this.arrayOfpoints[13].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[13] && this.X10 > 0.2 && this.X10 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[13].x, this.arrayOfpoints[13].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[13].x, this.arrayOfpoints[13].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[13] && this.X10 > 0.3 && this.X10 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[13].x, this.arrayOfpoints[13].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[13].x, this.arrayOfpoints[13].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[13] && this.X10 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[13].x, this.arrayOfpoints[13].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[13].x, this.arrayOfpoints[13].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[14] && this.X11 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[14].x, this.arrayOfpoints[14].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[14].x, this.arrayOfpoints[14].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[14] && this.X11 > 0.1 && this.X11 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[14].x, this.arrayOfpoints[14].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[14].x, this.arrayOfpoints[14].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[14] && this.X11 > 0.2 && this.X11 < 0.3) {
+        this.pointSize = 16
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[14].x, this.arrayOfpoints[14].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[14].x, this.arrayOfpoints[14].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[14] && this.X11 > 0.3 && this.X11 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[14].x, this.arrayOfpoints[14].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[14].x, this.arrayOfpoints[14].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[14] && this.X11 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[14].x, this.arrayOfpoints[14].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[14].x, this.arrayOfpoints[14].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[15] && this.X12 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[15].x, this.arrayOfpoints[15].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[15].x, this.arrayOfpoints[15].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[15] && this.X12 > 0.1 && this.X12 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[15].x, this.arrayOfpoints[15].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[15].x, this.arrayOfpoints[15].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[15] && this.X12 > 0.2 && this.X12 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[15].x, this.arrayOfpoints[15].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[15].x, this.arrayOfpoints[15].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[15] && this.X12 > 0.3 && this.X12 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[15].x, this.arrayOfpoints[15].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[15].x, this.arrayOfpoints[15].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[15] && this.X12 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[15].x, this.arrayOfpoints[15].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[15].x, this.arrayOfpoints[15].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[16] && this.X13 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[16].x, this.arrayOfpoints[16].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[16].x, this.arrayOfpoints[16].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[16] && this.X13 > 0.1 && this.X13 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[16].x, this.arrayOfpoints[16].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[16].x, this.arrayOfpoints[16].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[16] && this.X13 > 0.2 && this.X13 < 0.3) {
+        this.pointSize = 16
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[16].x, this.arrayOfpoints[16].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[16].x, this.arrayOfpoints[16].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[16] && this.X13 > 0.3 && this.X13 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[16].x, this.arrayOfpoints[16].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[16].x, this.arrayOfpoints[16].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[16] && this.X13 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[16].x, this.arrayOfpoints[16].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[16].x, this.arrayOfpoints[16].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[17] && this.X14 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[17].x, this.arrayOfpoints[17].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[17].x, this.arrayOfpoints[17].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[17] && this.X14 > 0.1 && this.X14 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[17].x, this.arrayOfpoints[17].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[17].x, this.arrayOfpoints[17].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[17] && this.X14 > 0.2 && this.X14 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[17].x, this.arrayOfpoints[17].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[17].x, this.arrayOfpoints[17].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[17] && this.X14 > 0.3 && this.X14 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[17].x, this.arrayOfpoints[17].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[17].x, this.arrayOfpoints[17].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[17] && this.X14 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[17].x, this.arrayOfpoints[17].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[17].x, this.arrayOfpoints[17].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[18] && this.X15 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[18].x, this.arrayOfpoints[18].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[18].x, this.arrayOfpoints[18].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[18] && this.X15 > 0.1 && this.X15 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[18].x, this.arrayOfpoints[18].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[18].x, this.arrayOfpoints[18].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[18] && this.X15 > 0.2 && this.X15 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[18].x, this.arrayOfpoints[18].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[18].x, this.arrayOfpoints[18].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[18] && this.X15 > 0.3 && this.X15 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[18].x, this.arrayOfpoints[18].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[18].x, this.arrayOfpoints[18].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[18] && this.X15 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[18].x, this.arrayOfpoints[18].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[18].x, this.arrayOfpoints[18].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[19] && this.X16 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[19].x, this.arrayOfpoints[19].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[19].x, this.arrayOfpoints[19].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[19] && this.X16 > 0.1 && this.X16 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[19].x, this.arrayOfpoints[19].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[19].x, this.arrayOfpoints[19].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[19] && this.X16 > 0.2 && this.X16 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[19].x, this.arrayOfpoints[19].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[19].x, this.arrayOfpoints[19].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[19] && this.X16 > 0.3 && this.X16 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[19].x, this.arrayOfpoints[19].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[19].x, this.arrayOfpoints[19].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[19] && this.X16 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[19].x, this.arrayOfpoints[19].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[19].x, this.arrayOfpoints[19].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[20] && this.X17 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[20].x, this.arrayOfpoints[20].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[20].x, this.arrayOfpoints[20].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[20] && this.X17 > 0.1 && this.X17 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[20].x, this.arrayOfpoints[20].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[20].x, this.arrayOfpoints[20].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[20] && this.X17 > 0.2 && this.X17 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[20].x, this.arrayOfpoints[20].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[20].x, this.arrayOfpoints[20].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[20] && this.X17 > 0.3 && this.X17 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[20].x, this.arrayOfpoints[20].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[20].x, this.arrayOfpoints[20].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[20] && this.X17 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[20].x, this.arrayOfpoints[20].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[20].x, this.arrayOfpoints[20].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[21] && this.X18 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[21].x, this.arrayOfpoints[21].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[21].x, this.arrayOfpoints[21].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[21] && this.X18 > 0.1 && this.X18 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[21].x, this.arrayOfpoints[21].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[21].x, this.arrayOfpoints[21].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[21] && this.X18 > 0.2 && this.X18 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[21].x, this.arrayOfpoints[21].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[21].x, this.arrayOfpoints[21].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[21] && this.X18 > 0.3 && this.X18 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[21].x, this.arrayOfpoints[21].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[21].x, this.arrayOfpoints[21].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[21] && this.X18 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[21].x, this.arrayOfpoints[21].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[21].x, this.arrayOfpoints[21].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[22] && this.X19 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[22].x, this.arrayOfpoints[22].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[22].x, this.arrayOfpoints[22].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[22] && this.X19 > 0.1 && this.X19 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[22].x, this.arrayOfpoints[22].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[22].x, this.arrayOfpoints[22].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[22] && this.X19 > 0.2 && this.X19 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[22].x, this.arrayOfpoints[22].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[22].x, this.arrayOfpoints[22].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[22] && this.X19 > 0.3 && this.X19 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[22].x, this.arrayOfpoints[22].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[22].x, this.arrayOfpoints[22].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[22] && this.X19 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[22].x, this.arrayOfpoints[22].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[22].x, this.arrayOfpoints[22].y, this.pointSize, this.pointSize);
       } 
 
 
       if (this.arrayOfData[23] && this.X20 < 0.1) {
+        this.pointSize = 24;
         fill(punktfarbeVeryLow);
-        ellipse(this.arrayOfpoints[23].x, this.arrayOfpoints[23].y, pointsizeVeryLow, pointsizeVeryLow);
+        ellipse(this.arrayOfpoints[23].x, this.arrayOfpoints[23].y, this.pointSize, this.pointSize);
       } 
       if(this.arrayOfData[23] && this.X20 > 0.1 && this.X20 < 0.2) {
+        this.pointSize = 20;
         fill(punktfarbeLow);
-        ellipse(this.arrayOfpoints[23].x, this.arrayOfpoints[23].y, pointsizeLow, pointsizeLow);
+        ellipse(this.arrayOfpoints[23].x, this.arrayOfpoints[23].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[23] && this.X20 > 0.2 && this.X20 < 0.3) {
+        this.pointSize = 16;
         fill(punktfarbeMiddle);
-        ellipse(this.arrayOfpoints[23].x, this.arrayOfpoints[23].y, pointsizeMiddle, pointsizeMiddle);
+        ellipse(this.arrayOfpoints[23].x, this.arrayOfpoints[23].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[23] && this.X20 > 0.3 && this.X20 < 0.5) {
+        this.pointSize = 12;
         fill(punktfarbeHigh);
-        ellipse(this.arrayOfpoints[23].x, this.arrayOfpoints[23].y, pointsizeHigh, pointsizeHigh);
+        ellipse(this.arrayOfpoints[23].x, this.arrayOfpoints[23].y, this.pointSize, this.pointSize);
       } 
       if (this.arrayOfData[23] && this.X20 > 0.5) {
+        this.pointSize = 8;
         fill(punktfarbeVeryHigh);
-        ellipse(this.arrayOfpoints[23].x, this.arrayOfpoints[23].y, pointsizeVeryHigh, pointsizeVeryHigh);
+        ellipse(this.arrayOfpoints[23].x, this.arrayOfpoints[23].y, this.pointSize, this.pointSize);
       } 
 
       // if-Schleifen Wahnsinn: Ende xD
@@ -657,7 +772,7 @@ class Country {
         noFill();
         stroke(255);
         strokeWeight(1.5);
-        ellipse(this.arrayOfpoints[year].x, this.arrayOfpoints[year].y, 15, 15)
+        ellipse(this.arrayOfpoints[year].x, this.arrayOfpoints[year].y, this.pointSize+5, this.pointSize+5)
         pop();
         ifAny = true;
       }
