@@ -33,9 +33,8 @@ class Country {
     this.X20 = 0;
     this.X21 = 0;
 
-    //this.myColorNormal = color(220, 220, 220, 50);
     //Farbe Punkte hover/selected
-    this.myColorOver = color(255);
+    this.myColorOver = color(255,0,0);
     //Farbe Punkte normal
     this.myColorNormal = color(255, 100, 100);
 
@@ -64,11 +63,11 @@ class Country {
       if (this.overMe || this.selected) {
         fill(this.myColorOver);
         stroke(this.myColorOver);
-        strokeWeight(3);
+        //strokeWeight(3);
       } else {
         fill(this.myColorNormal);
         stroke(this.myColorNormal);
-        strokeWeight(1);
+        //strokeWeight(1);
       }
 
       // if-Schleifen Wahnsinn für verschiedene Punktefarben qwq (Größe ließe sich auch noch anpassen ig)
@@ -134,11 +133,11 @@ class Country {
         line(this.arrayOfpoints[year - 1].x, this.arrayOfpoints[year - 1].y, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y);
       }
 
-      //This is for the country code to appear when the country is clicked
+      //This is for the country code and line to appear when the country is clicked
       if (year > 0 && this.selected) {
         stroke(255);
         line(this.arrayOfpoints[year - 1].x, this.arrayOfpoints[year - 1].y, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y);
-        fill(200);
+         fill(200);
         noStroke();
         textSize(18);
         text(this.myCode, this.arrayOfpoints[this.arrayOfData.length - 1].x + 5, this.arrayOfpoints[this.arrayOfData.length - 1].y);
