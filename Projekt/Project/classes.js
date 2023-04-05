@@ -761,7 +761,7 @@ class Country {
     let ifAny = false;
     for (let year = 0; year < this.arrayOfData.length; year++) {
       let distance = dist(mouseX, mouseY, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y);
-      if (distance < 5) {
+      if (distance < this.pointSize) {
         fill(255);
         noStroke();
         textSize(14);
