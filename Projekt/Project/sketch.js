@@ -194,8 +194,7 @@ function draw() {
     pop();
   }
 
-  //if countrySelected is true, highlight the country text of the selected countries, if the country is already selected, unselect that country
-  if (countrySelected) {
+  if (countrySelected === true) {
     for (let i = 0; i < selectedCountries.length; i++) {
       const yCoordinate = 70 + i * 20;
       const xCoordinate = innerWidth - 200;
@@ -204,7 +203,15 @@ function draw() {
         text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
       }
     }
-
+  } else {
+    for (let i = 0; i < selectedCountries.length; i++) {
+      const yCoordinate = 70 + i * 20;
+      const xCoordinate = innerWidth - 200;
+      if (arrayOfCountries[i].selected === true) {
+        fill(255);
+        text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
+      }
+    }
   }
 
 } 
