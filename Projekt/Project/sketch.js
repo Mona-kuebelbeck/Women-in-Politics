@@ -82,12 +82,13 @@ function setup() {
       currentCountry.X19 = currentCountryX19;
       let currentCountryX20 = POF_data.getNum(r, 89);
       currentCountry.X20 = currentCountryX20;
-      /*let currentCountryX21 = POF_data.getNum(r, 90);
-      currentCountry.X21 = currentCountryX21;*/
+      // let currentCountryX21 = POF_data.getNum(r, 90);
+      // currentCountry.X21 = currentCountryX21;
 
       arrayOfCountries.push(currentCountry);
     }
   }
+  arrayOfCountries[0].selected = true;
 
   // save the year data in each country object
   foundCountries = 0;
@@ -177,6 +178,19 @@ function draw() {
     pop();
   }
 
+  //if countrySelected is true, highlight the country text of the selected countries, if the country is already selected, unselect that country
+  if (countrySelected) {
+    for (let i = 0; i < selectedCountries.length; i++) {
+      const yCoordinate = 70 + i * 20;
+      const xCoordinate = innerWidth - 200;
+      if (arrayOfCountries[i].selected === true) {
+        fill(255);
+        text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
+      }
+    }
+
+  }
+
 } 
 // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 
@@ -210,7 +224,7 @@ function isOverLegend() {
     overAny: false,
     overIndex: 0
   }
-  
+
   for (let i = 0; i < selectedCountries.length; i++) {
     const yCoordinate = 70 + i * 20;
     const xCoordinate = innerWidth - 200;
