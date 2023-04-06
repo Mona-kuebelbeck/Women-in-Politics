@@ -1,7 +1,7 @@
 let POF_data;
 let GII_data;
 let arrayOfCountries = [];
-let selectedCountries = ["WLD", "ARE", "BEL", "BOL", "CHL", "CHN", "CRI", "CUB", "DEU", "ECU", "ESP", "FIN", "FRA", "GBR", "IND", "IRL", "IRQ", "ISL", "ITA", "JPN", "MEX", "MKD", "NAM", "NIC", "NOR", "NPL", "NZL", "PER", "PRT", "RUS", "RWA", "SEN", "SWE", "USA", "ZAF"];
+let selectedCountries = ["WLD", "ARE", "BEL", "BOL", "CHN", "CRI", "CUB", "DEU", "ECU", "ESP", "FIN", "FRA", "GBR", "IND", "IRQ", "ISL", "ITA", "JPN", "MEX", "MKD", "NAM", "NIC", "NOR", "NZL", "PER", "PRT", "RUS", "RWA", "SEN", "SWE", "USA", "ZAF"];
 let names = [];
 let countrySelected;
 let baseLine;
@@ -22,7 +22,7 @@ function preload() {
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   textFont(myFont);
-  myButton = new Button (20, 70, 20, "play");
+  myButton = new Button (50, 70, 30, "play");
 
   baseLine = height - 100;
 
@@ -85,13 +85,12 @@ function setup() {
       currentCountry.X19 = currentCountryX19;
       let currentCountryX20 = POF_data.getNum(r, 89);
       currentCountry.X20 = currentCountryX20;
-      // let currentCountryX21 = POF_data.getNum(r, 90);
-      // currentCountry.X21 = currentCountryX21;
+      let currentCountryX21 = POF_data.getNum(r, 90);
+      currentCountry.X21 = currentCountryX21;
 
       arrayOfCountries.push(currentCountry);
     }
   }
-  arrayOfCountries[0].selected = true;
 
   // save the year data in each country object
   foundCountries = 0;

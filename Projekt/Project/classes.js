@@ -723,6 +723,32 @@ class Country {
         ellipse(this.arrayOfpoints[23].x, this.arrayOfpoints[23].y, this.pointSize, this.pointSize);
       }
 
+      if (this.arrayOfData[24] && this.X21 < 0.1) {
+        this.pointSize = 24;
+        fill(this.punktfarbeVeryLow);
+        ellipse(this.arrayOfpoints[24].x, this.arrayOfpoints[24].y, this.pointSize, this.pointSize);
+      }
+      if (this.arrayOfData[24] && this.X21 > 0.1 && this.X21 < 0.2) {
+        this.pointSize = 20;
+        fill(this.punktfarbeLow);
+        ellipse(this.arrayOfpoints[24].x, this.arrayOfpoints[24].y, this.pointSize, this.pointSize);
+      }
+      if (this.arrayOfData[24] && this.X21 > 0.2 && this.X21 < 0.3) {
+        this.pointSize = 16;
+        fill(this.punktfarbeMiddle);
+        ellipse(this.arrayOfpoints[24].x, this.arrayOfpoints[24].y, this.pointSize, this.pointSize);
+      }
+      if (this.arrayOfData[24] && this.X21 > 0.3 && this.X21 < 0.5) {
+        this.pointSize = 12;
+        fill(this.punktfarbeHigh);
+        ellipse(this.arrayOfpoints[24].x, this.arrayOfpoints[24].y, this.pointSize, this.pointSize);
+      }
+      if (this.arrayOfData[24] && this.X21 > 0.5) {
+        this.pointSize = 8;
+        fill(this.punktfarbeVeryHigh);
+        ellipse(this.arrayOfpoints[24].x, this.arrayOfpoints[24].y, this.pointSize, this.pointSize);
+      }
+
       // if-Schleifen Wahnsinn: Ende xD
 
       if (year > 0 && !this.overMe) {
