@@ -1,7 +1,7 @@
 let POF_data;
 let GII_data;
 let arrayOfCountries = [];
-let selectedCountries = ["WLD", "ARE", "BEL", "BOL", "CHN", "CRI", "CUB", "DEU", "ECU", "ESP", "FIN", "FRA", "GBR", "IND", "IRQ", "ISL", "ITA", "JPN", "MEX", "MKD", "NAM", "NIC", "NOR", "NZL", "PER", "PRT", "RUS", "RWA", "SEN", "SWE", "USA", "ZAF"];
+let selectedCountries = ["WLD", "ARE", "BEL", "BOL", "CHN", "CRI", "CUB", "DEU", "ECU", "ESP", "FIN", "FRA", "GBR", "IND", "IRQ", "ISL", "ITA", "JPN", "MEX", "MKD", "NAM", "NIC", "NOR", "NZL", "PER", "PRT", "RUS", "RWA", "SEN", "SWE", "USA", "ZAF", "CAN"];
 let names = [];
 let countrySelected;
 let baseLine;
@@ -167,7 +167,7 @@ function draw() {
   let currentIndex = 0;
   for (let i = 0; i < arrayOfCountries.length; i++) {
     const yCoordinate = 70 + i * 20;
-    const xCoordinate = innerWidth - 200;
+    const xCoordinate = innerWidth - 170;
     if ((mouseY < yCoordinate && mouseY > yCoordinate - sizeOfText && mouseX > xCoordinate)) {
       currentIndex = i;
       fill(255);
@@ -196,7 +196,7 @@ function draw() {
   if (countrySelected === true) {
     for (let i = 0; i < selectedCountries.length; i++) {
       const yCoordinate = 70 + i * 20;
-      const xCoordinate = innerWidth - 200;
+      const xCoordinate = innerWidth - 170;
       if (arrayOfCountries[i].selected === true) {
         fill(255);
         text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
@@ -205,7 +205,7 @@ function draw() {
   } else {
     for (let i = 0; i < selectedCountries.length; i++) {
       const yCoordinate = 70 + i * 20;
-      const xCoordinate = innerWidth - 200;
+      const xCoordinate = innerWidth - 170;
       if (arrayOfCountries[i].selected === true) {
         fill(255);
         text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);

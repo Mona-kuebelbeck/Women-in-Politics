@@ -777,7 +777,7 @@ class Country {
         fill(200);
         noStroke();
         textSize(14);
-        text(this.myCode, this.arrayOfpoints[this.arrayOfData.length - 1].x + 5, this.arrayOfpoints[this.arrayOfData.length - 1].y);
+        text(this.myCode, this.arrayOfpoints[this.arrayOfData.length - 1].x + 15  , this.arrayOfpoints[this.arrayOfData.length - 1].y + 5);
         this.punktfarbeVeryHigh = color(255, 0, 0);
         this.punktfarbeHigh = color(255, 104, 70);
         this.punktfarbeMiddle = color(255, 158, 129);
