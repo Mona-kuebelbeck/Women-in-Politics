@@ -69,8 +69,6 @@ class Country {
     for (let year = 0; year < 25; year++) {
         fill(this.myColorNormal);
         stroke(this.myColorNormal);
-      
-      // if-Schleifen Wahnsinn für verschiedene Punktefarben qwq
 
       //Größen: 8,12, 16, 20, 24
 
@@ -749,8 +747,6 @@ class Country {
         ellipse(this.arrayOfpoints[24].x, this.arrayOfpoints[24].y, this.pointSize, this.pointSize);
       }
 
-      // if-Schleifen Wahnsinn: Ende xD
-
       if (year > 0 && !this.overMe) {
         //Linie normal
         stroke(220, 220, 220, 50);
@@ -805,7 +801,6 @@ class Country {
         push();
         noFill();
         stroke(255);
-        strokeWeight(1.5);
         ellipse(this.arrayOfpoints[year].x, this.arrayOfpoints[year].y, this.pointSize + 5, this.pointSize + 5)
         pop();
         ifAny = true;

@@ -138,14 +138,17 @@ function draw() {
   myButton.display();
 
   // 50% line and base lines
-  fill(133, 183, 143, 170);
+  fill(255, 100, 120, 200);
   noStroke();
-  text("50%", 8, line50);
+  push();
+  textSize(14);
+  text("50%", 8, line50+3);
+  pop();
   strokeWeight(2);
-  stroke(133, 183, 143, 95);
-  line(40, line50, width - 250, line50);
+  stroke(255, 100, 120, 200);
+  line(40, line50, width - 220, line50);
   stroke(120);
-  line(40, baseLine, width - 240, baseLine);
+  line(40, baseLine, width - 220, baseLine);
   line(40, baseLine, 40, 80);
 
   // draw the country objects
@@ -162,19 +165,16 @@ function draw() {
 
   //check if mouse is over a country and draw the name
   let currentIndex = 0;
-  for (let i = 0; i < selectedCountries.length; i++) {
+  for (let i = 0; i < arrayOfCountries.length; i++) {
     const yCoordinate = 70 + i * 20;
     const xCoordinate = innerWidth - 200;
     if ((mouseY < yCoordinate && mouseY > yCoordinate - sizeOfText && mouseX > xCoordinate)) {
       currentIndex = i;
-      arrayOfCountries[currentIndex].overMe = true;
       fill(255);
       textSize(sizeOfText);
       text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
     }
     else {
-      arrayOfCountries[currentIndex].overMe = false;
-      strokeWeight(1);
       fill(120);
       textSize(sizeOfText);
       text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
