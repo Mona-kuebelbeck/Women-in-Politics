@@ -6,6 +6,8 @@ let names = [];
 let countrySelected;
 let baseLine;
 const sizeOfText = 14;
+let myButton;
+let year = 0;
 
 // --------------------------------------------------------  PRELOAD  ----------------------------------------------------
 function preload() {
@@ -20,6 +22,7 @@ function preload() {
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   textFont(myFont);
+  myButton = new Button (20, 70, 20, "play");
 
   baseLine = height - 100;
 
@@ -123,8 +126,21 @@ function draw() {
   const line50 = height - 602.31 - 0.5;
   background(10);
 
+
+  if (myButton.selected && frameCount%10 === 0) {
+    if(year < 35) {
+      console.log("year: " + year);
+      arrayOfCountries[year].selected = !arrayOfCountries[year].selected;
+      year++;
+    } else {
+      year = 0;
+    }
+}
+  myButton.display();
+
   // 50% line and base lines
   fill(133, 183, 143, 170);
+  noStroke();
   text("50%", 8, line50);
   strokeWeight(2);
   stroke(133, 183, 143, 95);
@@ -209,6 +225,7 @@ function mouseReleased() {
       countrySelected = false;
     }
   }
+  myButton.releasedOverMe();
 }
 
 function isThere(candidate) {

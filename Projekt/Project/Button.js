@@ -16,7 +16,7 @@ class Button {
         this.myStrokeColor = color(255);
         this.mouseOverMe = false;
         this.selected = false;
-        this.myTextSize = 24;
+        this.myTextSize = 18;
     }
 
     display () {
@@ -38,7 +38,7 @@ class Button {
         noStroke();
         textAlign(LEFT);
         textSize(this.myTextSize);
-        text(this.myTitle, this.myX + 3, this.myY + 40);
+        text(this.myTitle, this.myX + this.mySize + this.myTextSize, this.myY + this.myTextSize);
 
         if(this.selected){
             strokeWeight(4);
