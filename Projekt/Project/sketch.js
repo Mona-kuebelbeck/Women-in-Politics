@@ -253,9 +253,18 @@ function isOverLegend() {
   return resultObj;
 }
 
-function filterCountries() {
+function filterCountriesEU() {
+  //filter the countries that are in the EU
   arrayOfCountries = [];
   selectedCountries = ["AUT", "BEL", "BGR", "CYP", "CZE", "DNK", "EST", "FIN", "FRA", "DEU", "GRC", "HRV", "HUN", "IRL", "ITA", "LTU", "LUX", "LVA", "MLT", "NLD", "POL", "PRT", "ROU", "SVK", "ESP", "SVN", "SWE"];
   setup();
 }
+
+function filterCountriesGDP() {
+  //filter the countries that have the highest GDP
+  arrayOfCountries = [];
+  selectedCountries = ["USA", "CHN", "JPN", "DEU", "GBR", "IND", "FRA", "ITA", "CAN", "BRA", "RUS", "AUS", "KOR", "ESP", "IDN"];
+  setup();
+}
+
 // -----------------------------------------------------------  END OF FUNCTIONS  ----------------------------------------------------
