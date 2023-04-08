@@ -14,15 +14,14 @@ function preload() {
   POF_data = loadTable("data/POF.csv", "csv", "header");
   GII_data = loadTable("data/GII.csv", "csv", "header");
   myFont = loadFont("assets/AvenirNextLTPro-Regular.otf");
-} 
+}
 // -------------------------------------------------------  PRELOAD  ----------------------------------------------------
-
 
 // --------------------------------------------------------  SET UP ----------------------------------------------------
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   textFont(myFont);
-  myButton = new Button (50, 70, 30, "play");
+  myButton = new Button(50, 70, 50, "play");
 
   baseLine = height - 100;
 
@@ -119,30 +118,28 @@ function setup() {
 }
 // --------------------------------------------------------  SET UP ----------------------------------------------------
 
-
 // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 function draw() {
   const line50 = height - 602.31 - 0.5;
   background(10);
+  myButton.display();
+  textAlign(LEFT);
 
-
-  if (myButton.selected && frameCount%10 === 0) {
-    if(year < 35) {
-      console.log("year: " + year);
+  if (myButton.selected && frameCount % 10 === 0) {
+    if (year < selectedCountries.length) {
       arrayOfCountries[year].selected = !arrayOfCountries[year].selected;
       year++;
     } else {
       year = 0;
     }
-}
-  myButton.display();
+  }
 
   // 50% line and base lines
   fill(255, 100, 120, 200);
   noStroke();
   push();
   textSize(14);
-  text("50%", 8, line50+3);
+  text("50%", 8, line50 + 3);
   pop();
   strokeWeight(2);
   stroke(255, 100, 120, 200);
@@ -166,15 +163,14 @@ function draw() {
   //check if mouse is over a country and draw the name
   let currentIndex = 0;
   for (let i = 0; i < arrayOfCountries.length; i++) {
-    const yCoordinate = 70 + i * 20;
+    const yCoordinate = 100 + i * 20;
     const xCoordinate = innerWidth - 170;
-    if ((mouseY < yCoordinate && mouseY > yCoordinate - sizeOfText && mouseX > xCoordinate)) {
+    if (mouseY < yCoordinate && mouseY > yCoordinate - sizeOfText && mouseX > xCoordinate) {
       currentIndex = i;
       fill(255);
       textSize(sizeOfText);
       text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
-    }
-    else {
+    } else {
       fill(120);
       textSize(sizeOfText);
       text(arrayOfCountries[i].myName, xCoordinate, yCoordinate);
@@ -183,7 +179,7 @@ function draw() {
 
   //Draw Timeline
   for (let year = 1997; year < 2022; year++) {
-    let x = map(year, 1997, 2021, 50, width - 260);
+    let x = map(year, 1997, 2021, 50, width - 250);
     push();
     translate(x, baseLine + 50);
     rotate(-PI / 4);
@@ -195,7 +191,7 @@ function draw() {
 
   if (countrySelected === true) {
     for (let i = 0; i < selectedCountries.length; i++) {
-      const yCoordinate = 70 + i * 20;
+      const yCoordinate = 100 + i * 20;
       const xCoordinate = innerWidth - 170;
       if (arrayOfCountries[i].selected === true) {
         fill(255);
@@ -204,7 +200,7 @@ function draw() {
     }
   } else {
     for (let i = 0; i < selectedCountries.length; i++) {
-      const yCoordinate = 70 + i * 20;
+      const yCoordinate = 100 + i * 20;
       const xCoordinate = innerWidth - 170;
       if (arrayOfCountries[i].selected === true) {
         fill(255);
@@ -212,21 +208,19 @@ function draw() {
       }
     }
   }
-
-} 
+}
 // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 
 // -----------------------------------------------------------  FUNCTIONS  ----------------------------------------------------
 function mouseReleased() {
   const hoverObj = isOverLegend();
   for (let i = 0; i < selectedCountries.length; i++) {
-    const yCoordinate = 70 + i * 20;
+    const yCoordinate = 100 + i * 20;
     const xCoordinate = innerWidth - 200;
     if (hoverObj.overIndex === i && hoverObj.overAny && arrayOfCountries[hoverObj.overIndex].selected === false) {
       arrayOfCountries[hoverObj.overIndex].selected = true;
       countrySelected = true;
-    }
-    else if (hoverObj.overIndex === i && hoverObj.overAny && arrayOfCountries[hoverObj.overIndex].selected === true) {
+    } else if (hoverObj.overIndex === i && hoverObj.overAny && arrayOfCountries[hoverObj.overIndex].selected === true) {
       arrayOfCountries[hoverObj.overIndex].selected = false;
       countrySelected = false;
     }
@@ -245,17 +239,23 @@ function isThere(candidate) {
 function isOverLegend() {
   let resultObj = {
     overAny: false,
-    overIndex: 0
-  }
+    overIndex: 0,
+  };
 
   for (let i = 0; i < selectedCountries.length; i++) {
-    const yCoordinate = 70 + i * 20;
+    const yCoordinate = 100 + i * 20;
     const xCoordinate = innerWidth - 200;
-    if ((mouseY < yCoordinate && mouseY > yCoordinate - 18 && mouseX > xCoordinate)) {
+    if (mouseY < yCoordinate && mouseY > yCoordinate - 18 && mouseX > xCoordinate) {
       resultObj.overIndex = i;
       resultObj.overAny = true;
     }
   }
   return resultObj;
+}
+
+function filterCountries() {
+  arrayOfCountries = [];
+  selectedCountries = ["BEL", "BGR", "DNK", "DEU", "EST", "FIN", "FRA", "GRC", "IRE", "ITA", "HRV", "LVA", "LTU", "LUX", "MLT", "NLD", "AUT", "POL", "PRT", "ROU", "SWE", "SVK", "SVN", "ESP", "CZE", "HUN", "CYP"];
+  setup();
 }
 // -----------------------------------------------------------  END OF FUNCTIONS  ----------------------------------------------------

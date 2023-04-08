@@ -67,8 +67,8 @@ class Country {
     this.isOverMe();
 
     for (let year = 0; year < 25; year++) {
-        fill(this.myColorNormal);
-        stroke(this.myColorNormal);
+      fill(this.myColorNormal);
+      stroke(this.myColorNormal);
 
       //Größen: 8,12, 16, 20, 24
 
@@ -100,7 +100,6 @@ class Country {
         ellipse(this.arrayOfpoints[0].x, this.arrayOfpoints[0].y, this.pointSize, this.pointSize);
       }
 
-
       if (this.arrayOfData[1] && this.X98 < 0.1) {
         this.pointSize = 24;
         fill(this.punktfarbeVeryLow);
@@ -126,7 +125,6 @@ class Country {
         fill(this.punktfarbeVeryHigh);
         ellipse(this.arrayOfpoints[1].x, this.arrayOfpoints[1].y, this.pointSize, this.pointSize);
       }
-
 
       if (this.arrayOfData[2] && this.X99 < 0.1) {
         this.pointSize = 24;
@@ -154,7 +152,6 @@ class Country {
         ellipse(this.arrayOfpoints[2].x, this.arrayOfpoints[2].y, this.pointSize, this.pointSize);
       }
 
-
       if (this.arrayOfData[3] && this.X00 < 0.1) {
         this.pointSize = 24;
         fill(this.punktfarbeVeryLow);
@@ -180,7 +177,6 @@ class Country {
         fill(this.punktfarbeVeryHigh);
         ellipse(this.arrayOfpoints[3].x, this.arrayOfpoints[3].y, this.pointSize, this.pointSize);
       }
-
 
       if (this.arrayOfData[4] && this.X01 < 0.1) {
         this.pointSize = 24;
@@ -208,7 +204,6 @@ class Country {
         ellipse(this.arrayOfpoints[4].x, this.arrayOfpoints[4].y, this.pointSize, this.pointSize);
       }
 
-
       if (this.arrayOfData[5] && this.X02 < 0.1) {
         this.pointSize = 24;
         fill(this.punktfarbeVeryLow);
@@ -234,7 +229,6 @@ class Country {
         fill(this.punktfarbeVeryHigh);
         ellipse(this.arrayOfpoints[5].x, this.arrayOfpoints[5].y, this.pointSize, this.pointSize);
       }
-
 
       if (this.arrayOfData[6] && this.X03 < 0.1) {
         this.pointSize = 24;
@@ -262,7 +256,6 @@ class Country {
         ellipse(this.arrayOfpoints[6].x, this.arrayOfpoints[6].y, this.pointSize, this.pointSize);
       }
 
-
       if (this.arrayOfData[7] && this.X04 < 0.1) {
         this.pointSize = 24;
         fill(this.punktfarbeVeryLow);
@@ -288,7 +281,6 @@ class Country {
         fill(this.punktfarbeVeryHigh);
         ellipse(this.arrayOfpoints[7].x, this.arrayOfpoints[7].y, this.pointSize, this.pointSize);
       }
-
 
       if (this.arrayOfData[8] && this.X05 < 0.1) {
         this.pointSize = 24;
@@ -316,7 +308,6 @@ class Country {
         ellipse(this.arrayOfpoints[8].x, this.arrayOfpoints[8].y, this.pointSize, this.pointSize);
       }
 
-
       if (this.arrayOfData[9] && this.X06 < 0.1) {
         this.pointSize = 24;
         fill(this.punktfarbeVeryLow);
@@ -342,7 +333,6 @@ class Country {
         fill(this.punktfarbeVeryHigh);
         ellipse(this.arrayOfpoints[9].x, this.arrayOfpoints[9].y, this.pointSize, this.pointSize);
       }
-
 
       if (this.arrayOfData[10] && this.X07 < 0.1) {
         this.pointSize = 24;
@@ -370,7 +360,6 @@ class Country {
         ellipse(this.arrayOfpoints[10].x, this.arrayOfpoints[10].y, this.pointSize, this.pointSize);
       }
 
-
       if (this.arrayOfData[11] && this.X08 < 0.1) {
         this.pointSize = 24;
         fill(this.punktfarbeVeryLow);
@@ -396,7 +385,6 @@ class Country {
         fill(this.punktfarbeVeryHigh);
         ellipse(this.arrayOfpoints[11].x, this.arrayOfpoints[11].y, this.pointSize, this.pointSize);
       }
-
 
       if (this.arrayOfData[12] && this.X09 < 0.1) {
         this.pointSize = 24;
@@ -424,7 +412,6 @@ class Country {
         ellipse(this.arrayOfpoints[12].x, this.arrayOfpoints[12].y, this.pointSize, this.pointSize);
       }
 
-
       if (this.arrayOfData[13] && this.X10 < 0.1) {
         this.pointSize = 24;
         fill(this.punktfarbeVeryLow);
@@ -451,7 +438,6 @@ class Country {
         ellipse(this.arrayOfpoints[13].x, this.arrayOfpoints[13].y, this.pointSize, this.pointSize);
       }
 
-
       if (this.arrayOfData[14] && this.X11 < 0.1) {
         this.pointSize = 24;
         fill(this.punktfarbeVeryLow);
@@ -463,7 +449,7 @@ class Country {
         ellipse(this.arrayOfpoints[14].x, this.arrayOfpoints[14].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[14] && this.X11 > 0.2 && this.X11 < 0.3) {
-        this.pointSize = 16
+        this.pointSize = 16;
         fill(this.punktfarbeMiddle);
         ellipse(this.arrayOfpoints[14].x, this.arrayOfpoints[14].y, this.pointSize, this.pointSize);
       }
@@ -477,7 +463,6 @@ class Country {
         fill(this.punktfarbeVeryHigh);
         ellipse(this.arrayOfpoints[14].x, this.arrayOfpoints[14].y, this.pointSize, this.pointSize);
       }
-
 
       if (this.arrayOfData[15] && this.X12 < 0.1) {
         this.pointSize = 24;
@@ -505,7 +490,6 @@ class Country {
         ellipse(this.arrayOfpoints[15].x, this.arrayOfpoints[15].y, this.pointSize, this.pointSize);
       }
 
-
       if (this.arrayOfData[16] && this.X13 < 0.1) {
         this.pointSize = 24;
         fill(this.punktfarbeVeryLow);
@@ -517,7 +501,7 @@ class Country {
         ellipse(this.arrayOfpoints[16].x, this.arrayOfpoints[16].y, this.pointSize, this.pointSize);
       }
       if (this.arrayOfData[16] && this.X13 > 0.2 && this.X13 < 0.3) {
-        this.pointSize = 16
+        this.pointSize = 16;
         fill(this.punktfarbeMiddle);
         ellipse(this.arrayOfpoints[16].x, this.arrayOfpoints[16].y, this.pointSize, this.pointSize);
       }
@@ -531,7 +515,6 @@ class Country {
         fill(this.punktfarbeVeryHigh);
         ellipse(this.arrayOfpoints[16].x, this.arrayOfpoints[16].y, this.pointSize, this.pointSize);
       }
-
 
       if (this.arrayOfData[17] && this.X14 < 0.1) {
         this.pointSize = 24;
@@ -559,7 +542,6 @@ class Country {
         ellipse(this.arrayOfpoints[17].x, this.arrayOfpoints[17].y, this.pointSize, this.pointSize);
       }
 
-
       if (this.arrayOfData[18] && this.X15 < 0.1) {
         this.pointSize = 24;
         fill(this.punktfarbeVeryLow);
@@ -585,7 +567,6 @@ class Country {
         fill(this.punktfarbeVeryHigh);
         ellipse(this.arrayOfpoints[18].x, this.arrayOfpoints[18].y, this.pointSize, this.pointSize);
       }
-
 
       if (this.arrayOfData[19] && this.X16 < 0.1) {
         this.pointSize = 24;
@@ -613,7 +594,6 @@ class Country {
         ellipse(this.arrayOfpoints[19].x, this.arrayOfpoints[19].y, this.pointSize, this.pointSize);
       }
 
-
       if (this.arrayOfData[20] && this.X17 < 0.1) {
         this.pointSize = 24;
         fill(this.punktfarbeVeryLow);
@@ -639,7 +619,6 @@ class Country {
         fill(this.punktfarbeVeryHigh);
         ellipse(this.arrayOfpoints[20].x, this.arrayOfpoints[20].y, this.pointSize, this.pointSize);
       }
-
 
       if (this.arrayOfData[21] && this.X18 < 0.1) {
         this.pointSize = 24;
@@ -667,7 +646,6 @@ class Country {
         ellipse(this.arrayOfpoints[21].x, this.arrayOfpoints[21].y, this.pointSize, this.pointSize);
       }
 
-
       if (this.arrayOfData[22] && this.X19 < 0.1) {
         this.pointSize = 24;
         fill(this.punktfarbeVeryLow);
@@ -693,7 +671,6 @@ class Country {
         fill(this.punktfarbeVeryHigh);
         ellipse(this.arrayOfpoints[22].x, this.arrayOfpoints[22].y, this.pointSize, this.pointSize);
       }
-
 
       if (this.arrayOfData[23] && this.X20 < 0.1) {
         this.pointSize = 24;
@@ -777,7 +754,7 @@ class Country {
         fill(200);
         noStroke();
         textSize(14);
-        text(this.myCode, this.arrayOfpoints[this.arrayOfData.length - 1].x + 15  , this.arrayOfpoints[this.arrayOfData.length - 1].y + 5);
+        text(this.myCode, this.arrayOfpoints[this.arrayOfData.length - 1].x + 15, this.arrayOfpoints[this.arrayOfData.length - 1].y + 5);
         this.punktfarbeVeryHigh = color(255, 0, 0);
         this.punktfarbeHigh = color(255, 104, 70);
         this.punktfarbeMiddle = color(255, 158, 129);
@@ -801,7 +778,7 @@ class Country {
         push();
         noFill();
         stroke(255);
-        ellipse(this.arrayOfpoints[year].x, this.arrayOfpoints[year].y, this.pointSize + 5, this.pointSize + 5)
+        ellipse(this.arrayOfpoints[year].x, this.arrayOfpoints[year].y, this.pointSize + 5, this.pointSize + 5);
         pop();
         ifAny = true;
       }
