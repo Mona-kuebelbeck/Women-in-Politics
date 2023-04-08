@@ -768,12 +768,13 @@ class Country {
     let ifAny = false;
     for (let year = 0; year < this.arrayOfData.length; year++) {
       let distance = dist(mouseX, mouseY, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y);
-      if (distance < this.pointSize) {
+      if (distance < this.pointSize / 2 && !ifAny) {
         fill(255);
         noStroke();
         textSize(14);
         text(this.myName + " (" + this.arrayOfData[year].x + ")", this.arrayOfpoints[year].x, this.arrayOfpoints[year].y - 45);
-        names.push(this.myName);
+        names.push(this.Name);
+
         text(this.arrayOfData[year].y + " %", this.arrayOfpoints[year].x, this.arrayOfpoints[year].y - 25);
         push();
         noFill();
