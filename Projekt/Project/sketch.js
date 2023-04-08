@@ -255,7 +255,7 @@ function isOverLegend() {
 
 function filterCountries() {
   arrayOfCountries = [];
-  selectedCountries = ["BEL", "BGR", "DNK", "DEU", "EST", "FIN", "FRA", "GRC", "IRE", "ITA", "HRV", "LVA", "LTU", "LUX", "MLT", "NLD", "AUT", "POL", "PRT", "ROU", "SWE", "SVK", "SVN", "ESP", "CZE", "HUN", "CYP"];
+  selectedCountries = ["AUT", "BEL", "BGR", "CYP", "CZE", "DNK", "EST", "FIN", "FRA", "DEU", "GRC", "HRV", "HUN", "IRL", "ITA", "LTU", "LUX", "LVA", "MLT", "NLD", "POL", "PRT", "ROU", "SVK", "ESP", "SVN", "SWE"];
   setup();
 }
 // -----------------------------------------------------------  END OF FUNCTIONS  ----------------------------------------------------
