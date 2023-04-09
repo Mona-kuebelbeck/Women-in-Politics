@@ -21,7 +21,7 @@ function preload() {
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   textFont(myFont);
-  myButton = new Button(50, 70, 50, "play");
+  myButton = new Button(1370, 750, 60, "play");
 
   baseLine = height - 150;
 
@@ -125,10 +125,17 @@ function draw() {
   myButton.display();
   textAlign(LEFT);
 
-  if (myButton.selected && frameCount % 10 === 0) {
+  if (myButton.selected && frameCount % 30 === 0) {
     if (year < selectedCountries.length) {
-      arrayOfCountries[year].selected = !arrayOfCountries[year].selected;
-      year++;
+      if (year > 0) {
+        arrayOfCountries[year].selected = true;
+        arrayOfCountries[year - 1].selected = false;
+        year++;
+      } else {
+        arrayOfCountries[year].selected = true;
+        arrayOfCountries[arrayOfCountries.length - 1].selected = false;
+        year++;
+      }
     } else {
       year = 0;
     }
@@ -162,7 +169,7 @@ function draw() {
   rotate(-HALF_PI);
   text("Proportion Of Seats Held By Women In National Parliaments (%)", -615, 25);
   pop();
-  text("Gender Inequality Index (GII):", 60, 810);
+  text("Gender Inequality Index (GII):", 60, 800);
   text("high", 320, 840);
   text("low", 500, 840);
 
