@@ -7,6 +7,8 @@ let countrySelected;
 let baseLine;
 const sizeOfText = 14;
 let myButton;
+let badHighlight;
+let goodHighlight;
 let year = 0;
 
 // --------------------------------------------------------  PRELOAD  ----------------------------------------------------
@@ -22,6 +24,8 @@ function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   textFont(myFont);
   myButton = new Button(1370, 750, 60, "play");
+  badHighlight = new Button(800, 750, 60, "highlight bad");
+  goodHighlight = new Button(950, 750, 60, "highlight good");
 
   baseLine = height - 150;
 
@@ -123,6 +127,8 @@ function draw() {
   const line50 = 180.0625 - 0.5;
   background(10);
   myButton.display();
+  badHighlight.display();
+  goodHighlight.display();
   textAlign(LEFT);
 
   if (myButton.selected && frameCount % 30 === 0) {
@@ -140,6 +146,7 @@ function draw() {
       year = 0;
     }
   }
+
 
   // 50% line and base lines
   fill(255, 100, 120, 200);
@@ -242,6 +249,8 @@ function mouseReleased() {
     }
   }
   myButton.releasedOverMe();
+  badHighlight.releasedOverMe();
+  goodHighlight.releasedOverMe();
 }
 
 function isThere(candidate) {
