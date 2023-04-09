@@ -23,7 +23,7 @@ function setup() {
   textFont(myFont);
   myButton = new Button(50, 70, 50, "play");
 
-  baseLine = height - 100;
+  baseLine = height - 150;
 
   //creates and fills country object data
   let currentCountry;
@@ -120,7 +120,7 @@ function setup() {
 
 // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 function draw() {
-  const line50 = height - 602.31 - 0.5;
+  const line50 = 180.0625 - 0.5;
   background(10);
   myButton.display();
   textAlign(LEFT);
@@ -139,31 +139,37 @@ function draw() {
   noStroke();
   push();
   textSize(14);
-  text("50%", 8, line50 + 3);
+  text("50%", 25, line50 + 3);
   pop();
   strokeWeight(2);
   stroke(255, 100, 120, 200);
-  line(40, line50, width - 220, line50);
+  line(60, line50, width - 200, line50);
   stroke(120);
-  line(40, baseLine, width - 220, baseLine);
-  line(40, baseLine, 40, 80);
+  line(60, baseLine, width - 200, baseLine);
+  line(60, baseLine, 60, 30);
 
   // draw the country objects
   for (let country = 0; country < arrayOfCountries.length; country++) {
     arrayOfCountries[country].drawCountry();
   }
 
-  // draw the header
+  // draw the legend
   noStroke();
   fill(255);
-  textSize(18);
-  text("Proportion of seats held by women in national parliaments (%)", 40, 40);
-  text("1997-2021", 40, 60);
+  textSize(17);
+  push();
+  translate(20, 100);
+  rotate(-HALF_PI);
+  text("Proportion Of Seats Held By Women In National Parliaments (%)", -615, 25);
+  pop();
+  text("Gender Inequality Index (GII):", 60, 810);
+  text("high", 320, 840);
+  text("low", 500, 840);
 
   //check if mouse is over a country and draw the name
   let currentIndex = 0;
   for (let i = 0; i < arrayOfCountries.length; i++) {
-    const yCoordinate = 100 + i * 20;
+    const yCoordinate = 60 + i * 20;
     const xCoordinate = innerWidth - 170;
     if (mouseY < yCoordinate && mouseY > yCoordinate - sizeOfText && mouseX > xCoordinate) {
       currentIndex = i;
@@ -179,9 +185,9 @@ function draw() {
 
   //Draw Timeline
   for (let year = 1997; year < 2022; year++) {
-    let x = map(year, 1997, 2021, 50, width - 250);
+    let x = map(year, 1997, 2021, 75, width - 225);
     push();
-    translate(x, baseLine + 50);
+    translate(x, baseLine + 40);
     rotate(-PI / 4);
     fill(120);
     noStroke();
@@ -189,9 +195,10 @@ function draw() {
     pop();
   }
 
+  //Highlight the names of the selected countries
   if (countrySelected === true) {
     for (let i = 0; i < selectedCountries.length; i++) {
-      const yCoordinate = 100 + i * 20;
+      const yCoordinate = 60 + i * 20;
       const xCoordinate = innerWidth - 170;
       if (arrayOfCountries[i].selected === true) {
         fill(255);
@@ -200,7 +207,7 @@ function draw() {
     }
   } else {
     for (let i = 0; i < selectedCountries.length; i++) {
-      const yCoordinate = 100 + i * 20;
+      const yCoordinate = 60 + i * 20;
       const xCoordinate = innerWidth - 170;
       if (arrayOfCountries[i].selected === true) {
         fill(255);
@@ -215,7 +222,7 @@ function draw() {
 function mouseReleased() {
   const hoverObj = isOverLegend();
   for (let i = 0; i < selectedCountries.length; i++) {
-    const yCoordinate = 100 + i * 20;
+    const yCoordinate = 60 + i * 20;
     const xCoordinate = innerWidth - 200;
     if (hoverObj.overIndex === i && hoverObj.overAny && arrayOfCountries[hoverObj.overIndex].selected === false) {
       arrayOfCountries[hoverObj.overIndex].selected = true;
@@ -243,7 +250,7 @@ function isOverLegend() {
   };
 
   for (let i = 0; i < selectedCountries.length; i++) {
-    const yCoordinate = 100 + i * 20;
+    const yCoordinate = 60 + i * 20;
     const xCoordinate = innerWidth - 200;
     if (mouseY < yCoordinate && mouseY > yCoordinate - 18 && mouseX > xCoordinate) {
       resultObj.overIndex = i;

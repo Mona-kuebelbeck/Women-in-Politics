@@ -47,20 +47,19 @@ class Country {
 
     this.numYears = 24; // for the distribution of the points in X
     this.stepX = (width - 300) / this.numYears;
-    this.xBorder = 50;
+    this.xBorder = 80;
   }
 
-  calculatePoints(lineaBase) {
+  calculatePoints(lineBase) {
     for (let year = 0; year < this.arrayOfData.length; year++) {
       let secX = this.xBorder + year * this.stepX;
-      let secY = map(this.arrayOfData[year].y, 0, 65, lineaBase, 80);
+      let secY = map(this.arrayOfData[year].y, 0, 64, lineBase, 30);
       let currentPoint = createVector(secX, secY);
       this.arrayOfpoints.push(currentPoint);
     }
-
-    if (this.myCode === "WLD") {
-      this.selected = true;
-    }
+    // if (this.myCode === "WLD") {
+    //   this.selected = true;
+    // }
   }
 
   drawCountry() {
