@@ -163,6 +163,8 @@ function draw() {
   // draw the legend
   noStroke();
   fill(255);
+  textSize(26);
+  text("// COOLER TITEL //", 80, 50);
   textSize(17);
   push();
   translate(20, 100);
