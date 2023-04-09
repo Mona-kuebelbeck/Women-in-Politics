@@ -178,9 +178,6 @@ function draw() {
   rotate(-HALF_PI);
   text("Proportion Of Seats Held By Women In National Parliaments (%)", -615, 25);
   pop();
-  text("Gender Inequality Index (GII):", 60, 800);
-  text("high", 320, 840);
-  text("low", 500, 840);
 
   //check if mouse is over a country and draw the name
   let currentIndex = 0;
@@ -231,6 +228,26 @@ function draw() {
       }
     }
   }
+
+  text("Gender Inequality Index (GII):", 60, 800);
+  text("high", 320, 825);
+  text("low", 540, 825);
+  //Legende
+  noStroke();
+  fill(255,0,0);
+  rect(320, 780, 50, 25);
+  fill(255, 104, 70);
+  rect(370, 780, 50, 25);
+  fill(255, 158, 129);
+  rect(420, 780, 50, 25);
+  fill(255, 207, 191);
+  rect(470, 780, 50, 25);
+  fill(255, 255, 255);
+  rect(520, 780, 50, 25);
+
+  stroke(255);
+  noFill();
+  rect(320, 780, 250, 25);
 }
 // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 
