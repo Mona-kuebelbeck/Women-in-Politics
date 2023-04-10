@@ -124,7 +124,7 @@ function setup() {
 
 // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 function draw() {
-  const line50 = 180.0625 - 0.5;
+  const line50 = 173.0625;
   background(10);
   myButton.display();
   badHighlight.display();
@@ -147,14 +147,13 @@ function draw() {
     }
   }
 
-
   // 50% line and base lines
   fill(120, 200, 120, 100);
   noStroke();
   push();
   textSize(14);
   // DIE POSITION VON DEM DING STIMMT EINFACH N I E **SCREECHING**
-  text("50%", 25, line50 + 3);
+  text("50%", 25, line50 + 5);
   pop();
   strokeWeight(1);
   stroke(120, 200, 120, 100);
@@ -242,7 +241,7 @@ function draw() {
 
   //Legende
   noStroke();
-  fill(255,0,0);
+  fill(255, 0, 0);
   rect(320, 780, 50, 25);
   fill(255, 104, 70);
   rect(370, 780, 50, 25);
