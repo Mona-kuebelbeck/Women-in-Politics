@@ -24,8 +24,8 @@ function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   textFont(myFont);
   myButton = new Button(1370, 750, 60, "play");
-  badHighlight = new Button(800, 750, 60, "highlight bad");
-  goodHighlight = new Button(950, 750, 60, "highlight good");
+  badHighlight = new Button(800, 750, 60, "highlight high");
+  goodHighlight = new Button(950, 750, 60, "highlight low");
 
   baseLine = height - 150;
 
@@ -149,14 +149,15 @@ function draw() {
 
 
   // 50% line and base lines
-  fill(255, 100, 120, 200);
+  fill(120, 200, 120, 100);
   noStroke();
   push();
   textSize(14);
+  // DIE POSITION VON DEM DING STIMMT EINFACH N I E **SCREECHING**
   text("50%", 25, line50 + 3);
   pop();
-  strokeWeight(2);
-  stroke(255, 100, 120, 200);
+  strokeWeight(1);
+  stroke(120, 200, 120, 100);
   line(60, line50, width - 200, line50);
   stroke(120);
   line(60, baseLine, width - 200, baseLine);
@@ -169,14 +170,15 @@ function draw() {
 
   // draw the legend
   noStroke();
-  fill(255);
-  textSize(26);
-  text("// COOLER TITEL //", 80, 50);
+  fill(120);
+  textSize(30);
+  text("Influence of women in politics on equality", 75, 55);
   textSize(17);
   push();
   translate(20, 100);
   rotate(-HALF_PI);
-  text("Proportion Of Seats Held By Women In National Parliaments (%)", -615, 25);
+  fill(120);
+  text("Proportion of seats held by women in national parliaments (%)", -594, 25);
   pop();
 
   //check if mouse is over a country and draw the name
@@ -229,9 +231,15 @@ function draw() {
     }
   }
 
-  text("Gender Inequality Index (GII):", 60, 800);
-  text("high", 320, 825);
-  text("low", 540, 825);
+  textSize(17);
+  text("Gender Inequality Index (GII):", 60, 798);
+  textSize(sizeOfText);
+  text("< 0.1", 325, 825);
+  text("< 0.2", 375, 825);
+  text("< 0.3", 427.5, 825);
+  text("< 0.5", 480, 825);
+  text("> 0.5", 530, 825);
+
   //Legende
   noStroke();
   fill(255,0,0);
@@ -245,7 +253,14 @@ function draw() {
   fill(255, 255, 255);
   rect(520, 780, 50, 25);
 
-  stroke(255);
+  /*fill(0,0,0);
+  text("< 0.1", 325, 797);
+  text("< 0.2", 375, 797);
+  text("< 0.3", 427.5, 797);
+  text("< 0.5", 480, 797);
+  text("> 0.5", 530, 797);*/
+
+  stroke(120);
   noFill();
   rect(320, 780, 250, 25);
 }
