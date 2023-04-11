@@ -69,7 +69,7 @@ class Country {
       fill(this.myColorNormal);
       stroke(this.myColorNormal);
 
-      //Größen: 8,12, 16, 20, 24
+      //Größen: 8, 12, 16, 20, 24
 
       noStroke();
 
@@ -98,7 +98,7 @@ class Country {
       }
       if (this.arrayOfData[0] && this.X97 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -130,7 +130,7 @@ class Country {
       }
       if (this.arrayOfData[1] && this.X98 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -162,7 +162,7 @@ class Country {
       }
       if (this.arrayOfData[2] && this.X99 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -194,7 +194,7 @@ class Country {
       }
       if (this.arrayOfData[3] && this.X00 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -226,7 +226,7 @@ class Country {
       }
       if (this.arrayOfData[4] && this.X01 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -258,7 +258,7 @@ class Country {
       }
       if (this.arrayOfData[5] && this.X02 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -290,7 +290,7 @@ class Country {
       }
       if (this.arrayOfData[6] && this.X03 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -322,7 +322,7 @@ class Country {
       }
       if (this.arrayOfData[7] && this.X04 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -354,7 +354,7 @@ class Country {
       }
       if (this.arrayOfData[8] && this.X05 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -386,7 +386,7 @@ class Country {
       }
       if (this.arrayOfData[9] && this.X06 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -418,7 +418,7 @@ class Country {
       }
       if (this.arrayOfData[10] && this.X07 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -450,7 +450,7 @@ class Country {
       }
       if (this.arrayOfData[11] && this.X08 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -482,7 +482,7 @@ class Country {
       }
       if (this.arrayOfData[12] && this.X09 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -514,7 +514,7 @@ class Country {
       }
       if (this.arrayOfData[13] && this.X10 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -546,7 +546,7 @@ class Country {
       }
       if (this.arrayOfData[14] && this.X11 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -578,7 +578,7 @@ class Country {
       }
       if (this.arrayOfData[15] && this.X12 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -610,7 +610,7 @@ class Country {
       }
       if (this.arrayOfData[16] && this.X13 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -642,7 +642,7 @@ class Country {
       }
       if (this.arrayOfData[17] && this.X14 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -674,7 +674,7 @@ class Country {
       }
       if (this.arrayOfData[18] && this.X15 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -706,7 +706,7 @@ class Country {
       }
       if (this.arrayOfData[19] && this.X16 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -738,7 +738,7 @@ class Country {
       }
       if (this.arrayOfData[20] && this.X17 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -770,7 +770,7 @@ class Country {
       }
       if (this.arrayOfData[21] && this.X18 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -802,7 +802,7 @@ class Country {
       }
       if (this.arrayOfData[22] && this.X19 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -834,7 +834,7 @@ class Country {
       }
       if (this.arrayOfData[23] && this.X20 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -866,7 +866,7 @@ class Country {
       }
       if (this.arrayOfData[24] && this.X21 > 0.5) {
         this.pointSize = 8;
-        if(badHighlight.selected) {
+        if (badHighlight.selected) {
           this.punktfarbeVeryHigh = color(255, 0, 0);
         }
         fill(this.punktfarbeVeryHigh);
@@ -876,8 +876,10 @@ class Country {
       if (year > 0 && !this.overMe) {
         //Linie normal
         stroke(220, 220, 220, 50);
+        push();
         strokeWeight(1);
         line(this.arrayOfpoints[year - 1].x, this.arrayOfpoints[year - 1].y, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y);
+        pop();
         this.punktfarbeVeryHigh = color(255, 0, 0, 3);
         this.punktfarbeHigh = color(255, 104, 70, 3);
         this.punktfarbeMiddle = color(255, 158, 129, 3);
@@ -886,8 +888,10 @@ class Country {
       } else if (year > 0 && this.overMe) {
         //Linie hover
         stroke(255);
+        push();
         strokeWeight(2);
         line(this.arrayOfpoints[year - 1].x, this.arrayOfpoints[year - 1].y, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y);
+        pop();
         this.punktfarbeVeryHigh = color(255, 0, 0, 3);
         this.punktfarbeHigh = color(255, 104, 70, 3);
         this.punktfarbeMiddle = color(255, 158, 129, 3);
@@ -898,8 +902,10 @@ class Country {
       //This is for the country code and line to appear when the country is clicked
       if (year > 0 && this.selected) {
         stroke(255);
+        push();
         strokeWeight(2.5);
         line(this.arrayOfpoints[year - 1].x, this.arrayOfpoints[year - 1].y, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y);
+        pop();
         fill(200);
         noStroke();
         textSize(14);
@@ -917,14 +923,14 @@ class Country {
     let ifAny = false;
     for (let year = 0; year < this.arrayOfData.length; year++) {
       let distance = dist(mouseX, mouseY, this.arrayOfpoints[year].x, this.arrayOfpoints[year].y);
-      if (distance < this.pointSize / 2 && !ifAny) {
+      if (distance < this.pointSize / 2 - 2 && !ifAny) {
         fill(255);
         noStroke();
         textSize(14);
-        text(this.myName + " (" + this.arrayOfData[year].x + ")", this.arrayOfpoints[year].x, this.arrayOfpoints[year].y - 45);
+        text(this.myName + " (" + this.arrayOfData[year].x + ")", this.arrayOfpoints[year].x + 20, this.arrayOfpoints[year].y - 20);
         names.push(this.Name);
 
-        text(this.arrayOfData[year].y + " %", this.arrayOfpoints[year].x, this.arrayOfpoints[year].y - 25);
+        text(this.arrayOfData[year].y + " %", this.arrayOfpoints[year].x + 20, this.arrayOfpoints[year].y);
         push();
         noFill();
         stroke(255);

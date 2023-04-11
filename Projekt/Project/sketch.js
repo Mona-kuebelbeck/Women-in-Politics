@@ -10,6 +10,10 @@ let myButton;
 let badHighlight;
 let goodHighlight;
 let year = 0;
+let normalSelected = true;
+let euSelected = false;
+let gdpSelected = false;
+let over50Selected = false;
 
 // --------------------------------------------------------  PRELOAD  ----------------------------------------------------
 function preload() {
@@ -23,9 +27,9 @@ function preload() {
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   textFont(myFont);
-  myButton = new Button(1370, 750, 60, "play");
-  badHighlight = new Button(800, 750, 60, "highlight high");
-  goodHighlight = new Button(950, 750, 60, "highlight low");
+  myButton = new Button(700, 770, 50, 50, "play");
+  badHighlight = new Button(800, 770, 100, 50, "highlight high");
+  goodHighlight = new Button(950, 770, 100, 50, "highlight low");
 
   baseLine = height - 150;
 
@@ -124,14 +128,14 @@ function setup() {
 
 // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 function draw() {
-  const line50 = 173.0625;
+  const line50 = 180.0625;
   background(10);
   myButton.display();
   badHighlight.display();
   goodHighlight.display();
   textAlign(LEFT);
 
-  if (myButton.selected && frameCount % 30 === 0) {
+  if (myButton.selected && frameCount % 40 === 0) {
     if (year < selectedCountries.length) {
       if (year > 0) {
         arrayOfCountries[year].selected = true;
@@ -152,7 +156,6 @@ function draw() {
   noStroke();
   push();
   textSize(14);
-  // DIE POSITION VON DEM DING STIMMT EINFACH N I E **SCREECHING**
   text("50%", 25, line50 + 5);
   pop();
   strokeWeight(1);
@@ -171,19 +174,19 @@ function draw() {
   noStroke();
   fill(120);
   textSize(30);
-  text("Influence of women in politics on equality", 75, 55);
+  text("Influence of Women in Politics on Equality", 75, 55);
   textSize(17);
   push();
   translate(20, 100);
   rotate(-HALF_PI);
   fill(120);
-  text("Proportion of seats held by women in national parliaments (%)", -594, 25);
+  text("Proportion of Seats held by Women in National Parliaments (%)", -615, 25);
   pop();
 
   //check if mouse is over a country and draw the name
   let currentIndex = 0;
   for (let i = 0; i < arrayOfCountries.length; i++) {
-    const yCoordinate = 60 + i * 20;
+    const yCoordinate = 180 + i * 20;
     const xCoordinate = innerWidth - 170;
     if (mouseY < yCoordinate && mouseY > yCoordinate - sizeOfText && mouseX > xCoordinate) {
       currentIndex = i;
@@ -212,7 +215,7 @@ function draw() {
   //Highlight the names of the selected countries
   if (countrySelected === true) {
     for (let i = 0; i < selectedCountries.length; i++) {
-      const yCoordinate = 60 + i * 20;
+      const yCoordinate = 180 + i * 20;
       const xCoordinate = innerWidth - 170;
       if (arrayOfCountries[i].selected === true) {
         fill(255);
@@ -221,7 +224,7 @@ function draw() {
     }
   } else {
     for (let i = 0; i < selectedCountries.length; i++) {
-      const yCoordinate = 60 + i * 20;
+      const yCoordinate = 180 + i * 20;
       const xCoordinate = innerWidth - 170;
       if (arrayOfCountries[i].selected === true) {
         fill(255);
@@ -230,6 +233,7 @@ function draw() {
     }
   }
 
+  fill(120);
   textSize(17);
   text("Gender Inequality Index (GII):", 60, 798);
   textSize(sizeOfText);
@@ -252,24 +256,54 @@ function draw() {
   fill(255, 255, 255);
   rect(520, 780, 50, 25);
 
-  /*fill(0,0,0);
-  text("< 0.1", 325, 797);
-  text("< 0.2", 375, 797);
-  text("< 0.3", 427.5, 797);
-  text("< 0.5", 480, 797);
-  text("> 0.5", 530, 797);*/
-
   stroke(120);
   noFill();
   rect(320, 780, 250, 25);
+
+  if (normalSelected === true) {
+    fill(255);
+    text("Our Selection", innerWidth - 170, 70);
+  } else {
+    noStroke();
+    fill(120);
+    text("Our Selection", innerWidth - 170, 70);
+  }
+
+  if (euSelected === true) {
+    fill(255);
+    text("EU Countries", innerWidth - 170, 90);
+  } else {
+    noStroke();
+    fill(120);
+    text("EU Countries", innerWidth - 170, 90);
+  }
+
+  if (gdpSelected === true) {
+    fill(255);
+    text("Highest GDP", innerWidth - 170, 110);
+  } else {
+    noStroke();
+    fill(120);
+    text("Highest GDP", innerWidth - 170, 110);
+  }
+
+  if (over50Selected === true) {
+    fill(255);
+    text("Countries >50%", innerWidth - 170, 130);
+  } else {
+    noStroke();
+    fill(120);
+    text("Countries >50%", innerWidth - 170, 130);
+  }
 }
 // -----------------------------------------------------------  DRAW  ----------------------------------------------------
 
 // -----------------------------------------------------------  FUNCTIONS  ----------------------------------------------------
 function mouseReleased() {
   const hoverObj = isOverLegend();
+  isOverFilter();
   for (let i = 0; i < selectedCountries.length; i++) {
-    const yCoordinate = 60 + i * 20;
+    const yCoordinate = 180 + i * 20;
     const xCoordinate = innerWidth - 200;
     if (hoverObj.overIndex === i && hoverObj.overAny && arrayOfCountries[hoverObj.overIndex].selected === false) {
       arrayOfCountries[hoverObj.overIndex].selected = true;
@@ -299,7 +333,7 @@ function isOverLegend() {
   };
 
   for (let i = 0; i < selectedCountries.length; i++) {
-    const yCoordinate = 60 + i * 20;
+    const yCoordinate = 180 + i * 20;
     const xCoordinate = innerWidth - 200;
     if (mouseY < yCoordinate && mouseY > yCoordinate - 18 && mouseX > xCoordinate) {
       resultObj.overIndex = i;
@@ -309,11 +343,42 @@ function isOverLegend() {
   return resultObj;
 }
 
+function isOverFilter() {
+  if (mouseX > innerWidth - 170 && mouseX < innerWidth && mouseY > 55 && mouseY < 75) {
+    console.log("normal");
+    filterCountriesNormal();
+  } else if (mouseX > innerWidth - 170 && mouseX < innerWidth && mouseY > 75 && mouseY < 95) {
+    console.log("EU");
+    filterCountriesEU();
+  } else if (mouseX > innerWidth - 170 && mouseX < innerWidth && mouseY > 95 && mouseY < 115) {
+    console.log("GDP");
+    filterCountriesGDP();
+  } else if (mouseX > innerWidth - 170 && mouseX < innerWidth && mouseY > 115 && mouseY < 135) {
+    console.log("over50");
+    filterCountriesOver50();
+  }
+}
+
+function filterCountriesNormal() {
+  //filter best of
+  arrayOfCountries = [];
+  selectedCountries = ["WLD", "ARE", "BEL", "BOL", "CHN", "CRI", "CUB", "DEU", "ECU", "ESP", "FIN", "FRA", "GBR", "IND", "IRQ", "ISL", "ITA", "JPN", "MEX", "MKD", "NAM", "NIC", "NOR", "NZL", "PER", "PRT", "RUS", "RWA", "SEN", "SWE", "USA", "ZAF", "CAN"];
+  setup();
+  normalSelected = true;
+  euSelected = false;
+  gdpSelected = false;
+  over50Selected = false;
+}
+
 function filterCountriesEU() {
   //filter the countries that are in the EU
   arrayOfCountries = [];
   selectedCountries = ["AUT", "BEL", "BGR", "CYP", "CZE", "DNK", "EST", "FIN", "FRA", "DEU", "GRC", "HRV", "HUN", "IRL", "ITA", "LTU", "LUX", "LVA", "MLT", "NLD", "POL", "PRT", "ROU", "SVK", "ESP", "SVN", "SWE"];
   setup();
+  euSelected = true;
+  gdpSelected = false;
+  normalSelected = false;
+  over50Selected = false;
 }
 
 function filterCountriesGDP() {
@@ -321,6 +386,21 @@ function filterCountriesGDP() {
   arrayOfCountries = [];
   selectedCountries = ["USA", "CHN", "JPN", "DEU", "GBR", "IND", "FRA", "ITA", "CAN", "BRA", "RUS", "AUS", "KOR", "ESP", "IDN"];
   setup();
+  gdpSelected = true;
+  normalSelected = false;
+  euSelected = false;
+  over50Selected = false;
+}
+
+function filterCountriesOver50() {
+  //filter the countries that have a higher percentage than 50
+  arrayOfCountries = [];
+  selectedCountries = ["RWA", "CUB", "BOL", "ARE", "NIC"];
+  setup();
+  over50Selected = true;
+  gdpSelected = false;
+  normalSelected = false;
+  euSelected = false;
 }
 
 // -----------------------------------------------------------  END OF FUNCTIONS  ----------------------------------------------------
