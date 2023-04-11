@@ -252,8 +252,8 @@ function draw() {
   line(620, innerHeight - 35, 610, innerHeight - 40);
   line(620, innerHeight - 35, 610, innerHeight - 30);
   noStroke();
-  text("Low Inequality", 305, innerHeight - 30);
-  text("High Inequality", 635, innerHeight - 30);
+  text("High Inequality", 305, innerHeight - 30);
+  text("Low Inequality", 635, innerHeight - 30);
 
   //Legende
   noStroke();
