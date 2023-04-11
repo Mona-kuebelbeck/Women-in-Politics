@@ -927,10 +927,10 @@ class Country {
         fill(255);
         noStroke();
         textSize(14);
-        text(this.myName + " (" + this.arrayOfData[year].x + ")", this.arrayOfpoints[year].x + 20, this.arrayOfpoints[year].y - 20);
+        text(this.myName + " (" + this.arrayOfData[year].x + ")", this.arrayOfpoints[year].x + 20, this.arrayOfpoints[year].y - 40);
         names.push(this.Name);
 
-        text(this.arrayOfData[year].y + " %", this.arrayOfpoints[year].x + 20, this.arrayOfpoints[year].y);
+        text(this.arrayOfData[year].y + " %", this.arrayOfpoints[year].x + 20, this.arrayOfpoints[year].y - 20);
         push();
         noFill();
         stroke(255);
