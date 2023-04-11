@@ -164,6 +164,10 @@ function draw() {
   stroke(120);
   line(60, baseLine, width - 200, baseLine);
   line(60, baseLine, 60, 30);
+  line(width-200, baseLine, width-210, baseLine-5);
+  line(width-200, baseLine, width-210, baseLine+5);
+  line(60, 30, 65, 40);
+  line(60, 30, 55, 40);
 
   // draw the country objects
   for (let country = 0; country < arrayOfCountries.length; country++) {
