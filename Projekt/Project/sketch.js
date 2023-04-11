@@ -28,8 +28,8 @@ function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   textFont(myFont);
   myButton = new Button(innerWidth - 170, 40, 40, 30, "Play");
-  badHighlight = new Button(630, innerHeight - 80, 15, 15);
-  goodHighlight = new Button(630, innerHeight - 50, 15, 15);
+  badHighlight = new Button(780, innerHeight - 80, 15, 15);
+  goodHighlight = new Button(780, innerHeight - 45, 15, 15);
 
   baseLine = height - 150;
 
@@ -134,9 +134,10 @@ function draw() {
   badHighlight.display();
   goodHighlight.display();
   textAlign(LEFT);
+  noStroke();
   fill(120);
-  text("Highlight High", 655, innerHeight - 67);
-  text("Highlight Low", 655, innerHeight - 37);
+  text("Highlight High", 805, innerHeight - 67);
+  text("Highlight Low", 805, innerHeight - 32);
 
   if (myButton.selected && frameCount % 40 === 0) {
     if (year < selectedCountries.length) {
@@ -244,24 +245,28 @@ function draw() {
   textSize(17);
   text("Gender Inequality Index (GII):", 60, innerHeight - 60);
   textSize(sizeOfText);
-  text("< 0.1", 325, innerHeight - 30);
-  text("< 0.2", 375, innerHeight - 30);
-  text("< 0.3", 427.5, innerHeight - 30);
-  text("< 0.5", 480, innerHeight - 30);
-  text("> 0.5", 530, innerHeight - 30);
+  stroke(120);
+  line(415, innerHeight - 35, 620, innerHeight - 35);
+  line(415, innerHeight - 35, 425, innerHeight - 40);
+  line(415, innerHeight - 35, 425, innerHeight - 30);
+  line(620, innerHeight - 35, 610, innerHeight - 40);
+  line(620, innerHeight - 35, 610, innerHeight - 30);
+  noStroke();
+  text("Low Inequality", 305, innerHeight - 30);
+  text("High Inequality", 635, innerHeight - 30);
 
   //Legende
   noStroke();
   fill(255, 0, 0);
-  ellipse(350, innerHeight - 60, 8, 8);
+  ellipse(420, innerHeight - 60, 8, 8);
   fill(255, 104, 70);
-  ellipse(400, innerHeight - 62, 12, 12);
+  ellipse(460, innerHeight - 62, 12, 12);
   fill(255, 158, 129);
-  ellipse(450, innerHeight - 64, 16, 16);
+  ellipse(505, innerHeight - 64, 16, 16);
   fill(255, 207, 191);
-  ellipse(500, innerHeight - 66, 20, 20);
+  ellipse(555, innerHeight - 66, 20, 20);
   fill(255, 255, 255);
-  ellipse(550, innerHeight - 68, 24, 24);
+  ellipse(610, innerHeight - 68, 24, 24);
 
   if (normalSelected === true) {
     noStroke();
