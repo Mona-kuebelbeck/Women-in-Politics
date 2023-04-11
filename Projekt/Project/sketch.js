@@ -27,9 +27,9 @@ function preload() {
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   textFont(myFont);
-  myButton = new Button(700, 770, 50, 50, "play");
-  badHighlight = new Button(800, 770, 100, 50, "highlight high");
-  goodHighlight = new Button(950, 770, 100, 50, "highlight low");
+  myButton = new Button(innerWidth - 170, 40, 40, 30, "Play");
+  badHighlight = new Button(630, innerHeight - 80, 15, 15);
+  goodHighlight = new Button(630, innerHeight - 50, 15, 15);
 
   baseLine = height - 150;
 
@@ -134,6 +134,9 @@ function draw() {
   badHighlight.display();
   goodHighlight.display();
   textAlign(LEFT);
+  fill(120);
+  text("Highlight High", 655, innerHeight - 67);
+  text("Highlight Low", 655, innerHeight - 37);
 
   if (myButton.selected && frameCount % 40 === 0) {
     if (year < selectedCountries.length) {
@@ -164,8 +167,8 @@ function draw() {
   stroke(120);
   line(60, baseLine, width - 200, baseLine);
   line(60, baseLine, 60, 30);
-  line(width-200, baseLine, width-210, baseLine-5);
-  line(width-200, baseLine, width-210, baseLine+5);
+  line(width - 200, baseLine, width - 210, baseLine - 5);
+  line(width - 200, baseLine, width - 210, baseLine + 5);
   line(60, 30, 65, 40);
   line(60, 30, 55, 40);
 
@@ -178,7 +181,7 @@ function draw() {
   noStroke();
   fill(120);
   textSize(30);
-  text("Influence of Women in Politics on Equality", 75, 55);
+  //text("Influence of Women in Politics on Equality", 75, 55);
   textSize(17);
   push();
   translate(20, 100);
@@ -190,7 +193,7 @@ function draw() {
   //check if mouse is over a country and draw the name
   let currentIndex = 0;
   for (let i = 0; i < arrayOfCountries.length; i++) {
-    const yCoordinate = 180 + i * 20;
+    const yCoordinate = 115 + i * 20;
     const xCoordinate = innerWidth - 170;
     if (mouseY < yCoordinate && mouseY > yCoordinate - sizeOfText && mouseX > xCoordinate) {
       currentIndex = i;
@@ -219,7 +222,7 @@ function draw() {
   //Highlight the names of the selected countries
   if (countrySelected === true) {
     for (let i = 0; i < selectedCountries.length; i++) {
-      const yCoordinate = 180 + i * 20;
+      const yCoordinate = 115 + i * 20;
       const xCoordinate = innerWidth - 170;
       if (arrayOfCountries[i].selected === true) {
         fill(255);
@@ -228,7 +231,7 @@ function draw() {
     }
   } else {
     for (let i = 0; i < selectedCountries.length; i++) {
-      const yCoordinate = 180 + i * 20;
+      const yCoordinate = 115 + i * 20;
       const xCoordinate = innerWidth - 170;
       if (arrayOfCountries[i].selected === true) {
         fill(255);
@@ -239,65 +242,62 @@ function draw() {
 
   fill(120);
   textSize(17);
-  text("Gender Inequality Index (GII):", 60, 798);
+  text("Gender Inequality Index (GII):", 60, innerHeight - 60);
   textSize(sizeOfText);
-  text("< 0.1", 325, 825);
-  text("< 0.2", 375, 825);
-  text("< 0.3", 427.5, 825);
-  text("< 0.5", 480, 825);
-  text("> 0.5", 530, 825);
+  text("< 0.1", 325, innerHeight - 30);
+  text("< 0.2", 375, innerHeight - 30);
+  text("< 0.3", 427.5, innerHeight - 30);
+  text("< 0.5", 480, innerHeight - 30);
+  text("> 0.5", 530, innerHeight - 30);
 
   //Legende
   noStroke();
   fill(255, 0, 0);
-  rect(320, 780, 50, 25);
+  ellipse(350, innerHeight - 60, 8, 8);
   fill(255, 104, 70);
-  rect(370, 780, 50, 25);
+  ellipse(400, innerHeight - 62, 12, 12);
   fill(255, 158, 129);
-  rect(420, 780, 50, 25);
+  ellipse(450, innerHeight - 64, 16, 16);
   fill(255, 207, 191);
-  rect(470, 780, 50, 25);
+  ellipse(500, innerHeight - 66, 20, 20);
   fill(255, 255, 255);
-  rect(520, 780, 50, 25);
-
-  stroke(120);
-  noFill();
-  rect(320, 780, 250, 25);
+  ellipse(550, innerHeight - 68, 24, 24);
 
   if (normalSelected === true) {
+    noStroke();
     fill(255);
-    text("Our Selection", innerWidth - 170, 70);
+    text("Our Selection", 100, 50);
   } else {
     noStroke();
     fill(120);
-    text("Our Selection", innerWidth - 170, 70);
+    text("Our Selection", 100, 50);
   }
 
   if (euSelected === true) {
     fill(255);
-    text("EU Countries", innerWidth - 170, 90);
+    text("EU Countries", 220, 50);
   } else {
     noStroke();
     fill(120);
-    text("EU Countries", innerWidth - 170, 90);
+    text("EU Countries", 220, 50);
   }
 
   if (gdpSelected === true) {
     fill(255);
-    text("Highest GDP", innerWidth - 170, 110);
+    text("Highest GDP", 340, 50);
   } else {
     noStroke();
     fill(120);
-    text("Highest GDP", innerWidth - 170, 110);
+    text("Highest GDP", 340, 50);
   }
 
   if (over50Selected === true) {
     fill(255);
-    text("Countries >50%", innerWidth - 170, 130);
+    text("Countries >50%", 460, 50);
   } else {
     noStroke();
     fill(120);
-    text("Countries >50%", innerWidth - 170, 130);
+    text("Countries >50%", 460, 50);
   }
 }
 // -----------------------------------------------------------  DRAW  ----------------------------------------------------
@@ -307,7 +307,7 @@ function mouseReleased() {
   const hoverObj = isOverLegend();
   isOverFilter();
   for (let i = 0; i < selectedCountries.length; i++) {
-    const yCoordinate = 180 + i * 20;
+    const yCoordinate = 115 + i * 20;
     const xCoordinate = innerWidth - 200;
     if (hoverObj.overIndex === i && hoverObj.overAny && arrayOfCountries[hoverObj.overIndex].selected === false) {
       arrayOfCountries[hoverObj.overIndex].selected = true;
@@ -337,7 +337,7 @@ function isOverLegend() {
   };
 
   for (let i = 0; i < selectedCountries.length; i++) {
-    const yCoordinate = 180 + i * 20;
+    const yCoordinate = 115 + i * 20;
     const xCoordinate = innerWidth - 200;
     if (mouseY < yCoordinate && mouseY > yCoordinate - 18 && mouseX > xCoordinate) {
       resultObj.overIndex = i;
@@ -348,17 +348,15 @@ function isOverLegend() {
 }
 
 function isOverFilter() {
-  if (mouseX > innerWidth - 170 && mouseX < innerWidth && mouseY > 55 && mouseY < 75) {
-    console.log("normal");
+  if (mouseX > 100 && mouseX < 180 && mouseY > 40 && mouseY < 55) {
     filterCountriesNormal();
-  } else if (mouseX > innerWidth - 170 && mouseX < innerWidth && mouseY > 75 && mouseY < 95) {
-    console.log("EU");
+    console.log("normal");
+  } else if (mouseX > 220 && mouseX < 310 && mouseY > 40 && mouseY < 55) {
     filterCountriesEU();
-  } else if (mouseX > innerWidth - 170 && mouseX < innerWidth && mouseY > 95 && mouseY < 115) {
-    console.log("GDP");
+    console.log("EU");
+  } else if (mouseX > 340 && mouseX < 430 && mouseY > 40 && mouseY < 55) {
     filterCountriesGDP();
-  } else if (mouseX > innerWidth - 170 && mouseX < innerWidth && mouseY > 115 && mouseY < 135) {
-    console.log("over50");
+  } else if (mouseX > 460 && mouseX < 565 && mouseY > 40 && mouseY < 55) {
     filterCountriesOver50();
   }
 }
